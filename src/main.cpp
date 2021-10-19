@@ -64,7 +64,7 @@ int main()
   dlclose(pLibHnd_Move);
 
   istringstream iss;
-  exec_preprocesor("polecenia.cmd", iss);
+  exec_preprocesor("commands", iss);
 
   cout << endl << "Czytanie z pliku" << endl << endl << iss.str();
 
