@@ -31,3 +31,18 @@ bool Interp4Move(istream &IstriM)
 3. interpreter polecenia
 4. wtyczka (interfejs)
 5. kolekcja wtyczek
+
+
+
+
+SCENA
++mapa obiektów std::map<string, std::shared_ptr<MobileObj>>
+
+ProgramInter
++scena jest polem w tej klasie
+
+
+zbiór interfejsów (Set4LibInterf)
++scena jest polem w klasie
++MAp4libinterf
++std::map<string, std::shared_ptr<libinterf>>
