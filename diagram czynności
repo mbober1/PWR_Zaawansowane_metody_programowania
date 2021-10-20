@@ -1,0 +1,33 @@
+1. wczytaj polecenie (pierwsze słowo)
+
+2. sprawdz czy dobrze wczytano
+jeśli nie to koniec programu (sukces)
+
+3. znajdz wczytaną bibliotekę (plugin)
+jeśli nie ma to koniec programu
+
+4. utwórz interpreter polecenia
+jeśli nie ma to koniec programu
+
+5. przekazujemy mu strumień aby wczytał sobie parametry
+jeśli wystąpi błąd to koniec programu
+
+6. znajdz obiekt i wykonaj operacje
+
+go to 1
+
+narysuj to i umieść w dokumentacji
+
+
+bool Interp4Move(istream &IstriM)
+{
+    dsd >> dsdsd >> ddsd;
+    return strim.fail();
+}
+
+
+1. obiekt mobilny
+2. scena
+3. interpreter polecenia
+4. wtyczka (interfejs)
+5. kolekcja wtyczek
