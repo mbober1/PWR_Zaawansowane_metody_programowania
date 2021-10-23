@@ -18,7 +18,7 @@ go to 1
 
 narysuj to i umieść w dokumentacji
 
-
+ 
 bool Interp4Move(istream &IstriM)
 {
     dsd >> dsdsd >> ddsd;

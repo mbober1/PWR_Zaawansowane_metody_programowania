@@ -1,9 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,132,60,159"/>
-<area shape="rect" id="node2" href="$utils_8cpp.html#ae364e052b635616ab3433bc2fd4eafaf" title=" " alt="" coords="181,5,269,32"/>
-<area shape="rect" id="node3" href="$utils_8cpp.html#ac78cf7b4b4614fede3bc1664a1e91dd6" title=" " alt="" coords="184,56,267,83"/>
-<area shape="rect" id="node4" href="$utils_8cpp.html#ad64ec02467bad8c4d219b0c4722b8050" title=" " alt="" coords="157,107,293,133"/>
-<area shape="rect" id="node5" href="$classInterp4Command.html#acfad02664c679f1cae776b70f90cd349" title="Wyświetla nazwę polecenia." alt="" coords="108,157,343,184"/>
-<area shape="rect" id="node6" href="$classInterp4Command.html#a08fbbf2a70cdac46930b0eba6f5f361c" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)." alt="" coords="124,208,327,235"/>
-<area shape="rect" id="node7" href="$classInterp4Command.html#a693ca79d24ba27d11a19ed6fc90c37b9" title="Wyświetla składnię polecenia." alt="" coords="116,259,335,285"/>
-</map>
