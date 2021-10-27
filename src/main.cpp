@@ -3,7 +3,6 @@
 #include <cassert>
 #include "Interp4Command.hh"
 #include "MobileObj.hh"
-// #include "utils.hpp"
 #include "LibInterf.hpp"
 
 using namespace std;
@@ -17,8 +16,13 @@ int main()
   move_lib.add_cmd("CreateCmd");
 
   LibInterf set_lib("libInterp4Set.so");
-  move_lib.add_cmd("CreateCmd");
+  set_lib.add_cmd("CreateCmd");
 
+  LibInterf rotate_lib("libInterp4Rotate.so");
+  rotate_lib.add_cmd("CreateCmd");
+
+  LibInterf pause_lib("libInterp4Pause.so");
+  pause_lib.add_cmd("CreateCmd");
   
 
 

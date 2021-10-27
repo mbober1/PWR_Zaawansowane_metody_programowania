@@ -21,12 +21,15 @@
  *  Klasa modeluje ...
  */
 class Interp4Set: public Interp4Command {
-  /*
-   *  Tu należy zdefiniować pola, które są niezbędne
-   *  do przechowywania wartości parametrów danego polecenia.
-   *  Ponieżej zdefiniowane jest tylko jedno pole jako przykład.
-   */
-  double  _Speed_mmS;
+
+private:
+  double coordinates_x;
+  double coordinates_y;
+  double angle_OX;
+  double angle_OY;
+  double angle_OZ;
+
+
  public:
   /*!
    * \brief

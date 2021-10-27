@@ -1,5 +1,5 @@
-#ifndef  COMMAND4MOVE_HH
-#define  COMMAND4MOVE_HH
+#ifndef  COMMAND4ROTATE_HH
+#define  COMMAND4ROTATE_HH
 
 #ifndef __GNUG__
 # pragma interface
@@ -10,9 +10,9 @@
 
 /*!
  * \file
- * \brief Definicja klasy Interp4Move
+ * \brief Definicja klasy Interp4Rotate
  *
- * Plik zawiera definicję klasy Interp4Move ...
+ * Plik zawiera definicję klasy Interp4Rotate ...
  */
 
 /*!
@@ -20,17 +20,17 @@
  *
  *  Klasa modeluje ...
  */
-class Interp4Move: public Interp4Command {
+class Interp4Rotate: public Interp4Command 
+{
+  double angular_speed; // szybkość kątowa (stopnie na sekundę)
+  std::string axis_name; // nazwa osi
+  double rotation_angle; // kąt obrotu (stopnie)
 
-private:
-  double speed;
-  unsigned int trip_length;
-
-public:
+ public:
   /*!
    * \brief
    */
-  Interp4Move();  
+  Interp4Rotate();  
   /*!
    * \brief Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)
    */

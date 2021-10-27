@@ -28,7 +28,7 @@ Interp4Command* CreateCmd(void)
 /*!
  *
  */
-Interp4Move::Interp4Move(): _Speed_mmS(0)
+Interp4Move::Interp4Move(): speed(0), trip_length(0)
 {}
 
 
@@ -37,10 +37,7 @@ Interp4Move::Interp4Move(): _Speed_mmS(0)
  */
 void Interp4Move::PrintCmd() const
 {
-  /*
-   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
-   */
-  cout << GetCmdName() << " Obj_A " << _Speed_mmS  << " 10" << endl;
+  cout << GetCmdName() << " Obj_A " << speed << trip_length << endl;
 }
 
 

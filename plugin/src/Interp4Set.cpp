@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Interp4Set.hh"
-#include "MobileObj.hh"
 
 using std::cout;
 using std::endl;
@@ -28,7 +27,12 @@ Interp4Command* CreateCmd(void)
 /*!
  *
  */
-Interp4Set::Interp4Set(): _Speed_mmS(0)
+Interp4Set::Interp4Set(): 
+  coordinates_x(0),
+  coordinates_y(0),
+  angle_OX(0),
+  angle_OY(0),
+  angle_OZ(0)
 {}
 
 
@@ -37,10 +41,7 @@ Interp4Set::Interp4Set(): _Speed_mmS(0)
  */
 void Interp4Set::PrintCmd() const
 {
-  /*
-   *  Tu trzeba napisać odpowiednio zmodyfikować kod poniżej.
-   */
-  cout << GetCmdName() << " Obj_A " << _Speed_mmS  << " 10" << endl;
+  cout << GetCmdName() << " Obj_A " << coordinates_x << coordinates_y << angle_OX << angle_OY << angle_OZ << endl;
 }
 
 
@@ -91,5 +92,5 @@ Interp4Command* Interp4Set::CreateCmd()
  */
 void Interp4Set::PrintSyntax() const
 {
-  cout << "   Set  NazwaObiektu  wsp_x  wsp_y  kat_OX  kat_OY  kat_OZ" << endl;
+  cout << "   Set  NazwaObiektu  wsp_x[m]  wsp_y[m]  kat_OX[deg]  kat_OY[deg]  kat_OZ[deg]" << endl;
 }
