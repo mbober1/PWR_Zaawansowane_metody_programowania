@@ -66,10 +66,8 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
  */
 bool Interp4Rotate::ReadParams(std::istream& Strm_CmdsList)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+  Strm_CmdsList >> angular_speed >> axis_name >> rotation_angle;
+  return !Strm_CmdsList.fail();
 }
 
 

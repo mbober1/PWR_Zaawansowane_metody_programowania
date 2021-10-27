@@ -7,8 +7,8 @@ __start__: obj __lines_for_space__ ../libs/libInterp4Move.so  ../libs/libInterp4
 obj:
 	mkdir obj
 
-CPPFLAGS=-Wall -fPIC -pedantic -std=c++17 -iquote inc -iquote ../inc
-LDFLAGS=-Wall -shared
+CPPFLAGS=-Wall  -g -fPIC -pedantic -std=c++17 -iquote inc -iquote ../inc
+LDFLAGS=-Wall -shared -g
 
 __lines_for_space__:
 	@echo

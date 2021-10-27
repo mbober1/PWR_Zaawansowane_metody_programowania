@@ -1,34 +1,6 @@
 #include "utils.hpp"
 
 
-bool check_lib(void* lib_handler, std::string name)
-{
-  if (nullptr == lib_handler) 
-  {
-    std::cerr << "Brak biblioteki: " << name << std::endl;
-    return true;
-  }
-  else
-  {
-    std::cout << "Biblioteka " << name << " załadowana" << std::endl;
-    return false;
-  }
-}
-
-bool check_fun(void* fun_handler, std::string name)
-{
-  if (nullptr == fun_handler) 
-  {
-    std::cerr << "Brak funkcji: " << name << std::endl;
-    return true;
-  }
-  else
-  {
-    std::cout << "Funkcja " << name << " znaleziona" << std::endl;
-    return false;
-  }
-}
-
 
 bool exec_preprocesor(std::string name, std::istringstream &stream)
 {

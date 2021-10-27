@@ -66,10 +66,8 @@ bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
  */
 bool Interp4Pause::ReadParams(std::istream& Strm_CmdsList)
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
-  return true;
+  Strm_CmdsList >> delay;
+  return !Strm_CmdsList.fail();
 }
 
 

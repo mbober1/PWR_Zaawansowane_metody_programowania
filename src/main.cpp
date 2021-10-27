@@ -4,69 +4,54 @@
 #include "Interp4Command.hh"
 #include "MobileObj.hh"
 #include "LibInterf.hpp"
+#include "utils.hpp"
+#include "Set4LibInterf.hpp"
 
 using namespace std;
 
+void exec_cmd(LibInterf &library, std::string cmd_name)
+{
+  void *new_cmd = library.cmd_list["CreateCmd"];
 
+  if(nullptr != new_cmd)
+  {
+    Interp4Command *(*create_cmd)(void);
+    create_cmd = *reinterpret_cast<Interp4Command* (**)(void)>(&new_cmd);
+    Interp4Command *cmd_pointer = create_cmd();
+    std::cout << cmd_pointer->GetCmdName() << std::endl;
+    delete cmd_pointer;
+  }
+}
 
 int main()
 {
+  Set4LibInterf lib_set;
 
-  LibInterf move_lib("libInterp4Move.so");
-  move_lib.add_cmd("CreateCmd");
+  istringstream iss;
+  exec_preprocesor("commands", iss);
+  std::string cmd_name;
+  std::string object_name;
 
-  LibInterf set_lib("libInterp4Set.so");
-  set_lib.add_cmd("CreateCmd");
+  iss >> cmd_name;
+  cout << cmd_name << endl;
 
-  LibInterf rotate_lib("libInterp4Rotate.so");
-  rotate_lib.add_cmd("CreateCmd");
+  auto it = lib_set.get(cmd_name);
 
-  LibInterf pause_lib("libInterp4Pause.so");
-  pause_lib.add_cmd("CreateCmd");
+  if (it == lib_set.NOT_FOUND)
+  {
+    cout << "Nie znaleziono komendy: " << cmd_name << endl;
+    return false;
+  }
   
 
+  Interp4Command *cmd = it->second->create_cmd();
 
-  // void *pFunMove = dlsym(pLibHnd_Move,"CreateCmd");
-  // void *pFunSet = dlsym(pLibHnd_Set,"CreateCmd");
+  // if(false == cmd->ReadParams(iss))
+  // {
+  //   // cout << "Błąd czytania parametrów" << endl;
+  //   // delete cmd;
+  //   // return false;
+  // }
 
-  // if (check_fun(pFunMove, "CreateCmd")) return 1;
-  // if (check_fun(pFunSet, "CreateCmd"))  return 1;
-
-
-  // Interp4Command *(*pCreateCmd_Move)(void);
-  // Interp4Command *(*pCreateCmd_Set)(void);
-
-  // pCreateCmd_Move = *reinterpret_cast<Interp4Command* (**)(void)>(&pFunMove);
-  // pCreateCmd_Set = *reinterpret_cast<Interp4Command* (**)(void)>(&pFunSet);
-
-
-  // Interp4Command *move = pCreateCmd_Move();
-  // Interp4Command *set = pCreateCmd_Set();
-
-  // cout << endl;
-
-  // cout << "Nazwa: " << move->GetCmdName() << endl;
-  // cout << "Syntax: ";
-  // move->PrintSyntax();
-  // cout << "Komenda: ";
-  // move->PrintCmd();
-
-
-  // cout << endl;
-  // cout << "Nazwa: " << set->GetCmdName() << endl;
-  // cout << "Syntax: ";
-  // set->PrintSyntax();
-  // cout << "Komenda: ";
-  // set->PrintCmd();
-
-  // delete move;
-  // delete set;
-
-  // dlclose(pLibHnd_Move);
-
-
-  // istringstream iss;
-  // exec_preprocesor("commands", iss);
-  // cout << endl << "Czytanie z pliku" << endl << endl << iss.str();
-
+  // cmd->PrintCmd();
 }
