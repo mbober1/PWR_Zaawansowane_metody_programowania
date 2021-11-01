@@ -4,7 +4,7 @@
         {
             "label": "BuildCPP",
             "type": "shell",
-            "command": "make",
+            "command": "make cleanall && make -j12",
             "problemMatcher": []
         }
     ]
