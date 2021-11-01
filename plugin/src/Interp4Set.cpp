@@ -41,7 +41,7 @@ Interp4Set::Interp4Set():
  */
 void Interp4Set::PrintCmd() const
 {
-  cout << GetCmdName() << " Obj_A " << coordinates_x << coordinates_y << angle_OX << angle_OY << angle_OZ << endl;
+  cout << GetCmdName() << " Obj_A " << coordinates_x << " " << coordinates_y << " "  << angle_OX << " "  << angle_OY << " "  << angle_OZ << " "  << endl;
 }
 
 

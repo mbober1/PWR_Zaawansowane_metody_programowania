@@ -37,7 +37,7 @@ Interp4Move::Interp4Move(): speed(0), trip_length(0)
  */
 void Interp4Move::PrintCmd() const
 {
-  cout << GetCmdName() << " Obj_A " << speed << trip_length << endl;
+  cout << GetCmdName() << " Obj_A " << " " << speed << " " << trip_length << " " << endl;
 }
 
 

@@ -36,7 +36,7 @@ Interp4Rotate::Interp4Rotate(): angular_speed(0), axis_name(""), rotation_angle(
  */
 void Interp4Rotate::PrintCmd() const
 {
-  cout << GetCmdName() << " Obj_A " << angular_speed  << axis_name << rotation_angle << endl;
+  cout << GetCmdName() << " Obj_A " << angular_speed << " " << axis_name << " " << rotation_angle << " " << endl;
 }
 
 

@@ -6,7 +6,7 @@
 LibInterf::LibInterf(std::string path)
 {
     load_lib(path);
-    init_lib("CreateCmd");
+    init_lib();
 }
 
 LibInterf::~LibInterf()
@@ -15,26 +15,21 @@ LibInterf::~LibInterf()
 }
 
 
-bool LibInterf::init_lib(std::string cmd_name)
+bool LibInterf::init_lib()
 {
-    void *new_cmd = dlsym(this->handler, cmd_name.c_str());
+    void *new_cmd = dlsym(this->handler, "CreateCmd");
 
     if (nullptr == new_cmd) 
     {
-        std::cerr << "Brak funkcji: " << cmd_name << std::endl;
+        std::cerr << "Brak funkcji: CreateCmd" << std::endl;
         return false;
     }
-    else
-    {
-        std::cout << "Funkcja " << cmd_name << " znaleziona" << std::endl;
-        this->cmd_list.insert({cmd_name, new_cmd});
-        return true;
-    }
 
-    create_cmd = *reinterpret_cast<Interp4Command* (**)(void)>(&new_cmd);
-    Interp4Command * interpreted_cmd = create_cmd();
-    std::cout << interpreted_cmd->GetCmdName();
+    create_cmd = reinterpret_cast<Interp4Command* (*)(void)>(new_cmd);
+    Interp4Command* interpreted_cmd = create_cmd();
+    this->name = interpreted_cmd->GetCmdName();
     delete interpreted_cmd;
+    return true;
 }
 
 bool LibInterf::load_lib(std::string path) {

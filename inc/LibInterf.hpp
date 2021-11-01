@@ -11,8 +11,10 @@ private:
 public:
     LibInterf(std::string path);
     ~LibInterf();
-    bool init_lib(std::string cmd_name);
+    bool init_lib();
     bool load_lib(std::string path);
+
+    std::string name;
 
     std::map<std::string, void*> cmd_list; // lista dostępnych komend
     Interp4Command *(*create_cmd)(void);

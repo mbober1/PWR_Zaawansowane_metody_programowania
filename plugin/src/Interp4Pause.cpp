@@ -36,7 +36,7 @@ Interp4Pause::Interp4Pause(): delay(0)
  */
 void Interp4Pause::PrintCmd() const
 {
-  cout << GetCmdName() << " Obj_A " << delay << endl;
+  cout << GetCmdName() << " Obj_A " << " " << delay << endl;
 }
 
 
