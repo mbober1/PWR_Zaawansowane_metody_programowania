@@ -3,37 +3,42 @@
 #include "LibInterf.hpp"
 #include <memory>
 
-#define NOT_FOUND lib_map.end()
 typedef std::map<std::string, std::shared_ptr<LibInterf>> LibInterfMap;
 class Set4LibInterf
 {
 private:
+    LibInterfMap lib_map;
     
 public:
-    Set4LibInterf(/* args */);
+    Set4LibInterf();
     ~Set4LibInterf();
     LibInterfMap::const_iterator get(std::string name);
-    LibInterfMap lib_map;
+    void add_lib(std::string path);
+    LibInterfMap::iterator not_exist();
 };
 
-Set4LibInterf::Set4LibInterf(/* args */)
+Set4LibInterf::Set4LibInterf()
 {
-  std::shared_ptr<LibInterf> move_ptr = std::make_shared<LibInterf>("libs/libInterp4Move.so");
-  std::shared_ptr<LibInterf> set_ptr = std::make_shared<LibInterf>("libs/libInterp4Set.so");
-  std::shared_ptr<LibInterf> rotate_ptr = std::make_shared<LibInterf>("libs/libInterp4Rotate.so");
-  std::shared_ptr<LibInterf> pause_ptr = std::make_shared<LibInterf>("libs/libInterp4Pause.so");
-
-  this->lib_map.insert({move_ptr->name, move_ptr});
-  this->lib_map.insert({"Set", set_ptr});
-  this->lib_map.insert({"Rotate", rotate_ptr});
-  this->lib_map.insert({"Pause", pause_ptr});
+  add_lib("libs/libInterp4Move.so");
+  add_lib("libs/libInterp4Set.so");
+  add_lib("libs/libInterp4Rotate.so");
+  add_lib("libs/libInterp4Pause.so");
 }
 
-Set4LibInterf::~Set4LibInterf()
-{
-}
+Set4LibInterf::~Set4LibInterf() {}
 
 inline LibInterfMap::const_iterator Set4LibInterf::get(std::string name) 
 {
   return lib_map.find(name);
+}
+
+inline void Set4LibInterf::add_lib(std::string path) 
+{
+  std::shared_ptr<LibInterf> lib_ptr = std::make_shared<LibInterf>(path);
+  this->lib_map.insert({lib_ptr->name, lib_ptr});
+}
+
+inline LibInterfMap::iterator Set4LibInterf::not_exist() 
+{
+  return this->lib_map.end();
 }

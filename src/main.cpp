@@ -23,7 +23,7 @@ int main()
 
     auto it = lib_set.get(cmd_name);
 
-    if (it == lib_set.NOT_FOUND)
+    if (it == lib_set.not_exist())
     {
       cout << "Nie znaleziono komendy: " << cmd_name << endl;
       return false;
