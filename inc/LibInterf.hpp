@@ -16,7 +16,7 @@ public:
 
     std::string name;
 
-    std::map<std::string, void*> cmd_list; // lista dostępnych komend
+    // std::map<std::string, void*> cmd_list; // lista dostępnych komend
     Interp4Command *(*create_cmd)(void);
 };
 

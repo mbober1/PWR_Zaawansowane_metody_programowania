@@ -39,3 +39,7 @@ zbiór interfejsów (Set4LibInterf)
 +scena jest polem w klasie
 +MAp4libinterf
 +std::map<string, std::shared_ptr<libinterf>>
+
+
+
+poprawić diagram na zgodny z UML

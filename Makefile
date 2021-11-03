@@ -22,17 +22,23 @@ LDFLAGS=-Wall -g
 
 
 
-interp: obj/main.o obj/utils.o obj/LibInterf.o
-	g++ ${LDFLAGS} -o interp  obj/main.o obj/utils.o obj/LibInterf.o -ldl
+interp: obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/InterpProgram.o
+	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/InterpProgram.o -ldl
 
-obj/main.o: src/main.cpp inc/Interp4Command.hh
+obj/main.o: src/main.cpp inc/InterpProgram.hpp
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
-
-obj/utils.o: src/utils.cpp inc/utils.hpp
-	g++ -c ${CPPFLAGS} -o obj/utils.o src/utils.cpp
 
 obj/LibInterf.o: src/LibInterf.cpp inc/LibInterf.hpp
 	g++ -c ${CPPFLAGS} -o obj/LibInterf.o src/LibInterf.cpp
+
+obj/Set4LibInterf.o: src/Set4LibInterf.cpp inc/Set4LibInterf.hpp
+	g++ -c ${CPPFLAGS} -o obj/Set4LibInterf.o src/Set4LibInterf.cpp
+
+obj/InterpProgram.o: src/InterpProgram.cpp inc/InterpProgram.hpp
+	g++ -c ${CPPFLAGS} -o obj/InterpProgram.o src/InterpProgram.cpp
+
+obj/Scene.o: src/Scene.cpp inc/Scene.hpp
+	g++ -c ${CPPFLAGS} -o obj/Scene.o src/Scene.cpp
 
 
 clean:

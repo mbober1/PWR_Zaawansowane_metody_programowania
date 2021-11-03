@@ -3,18 +3,31 @@
 #include <iostream>
 
 
+  
+/*!
+ * \brief Konstruktor LibInterf
+ */
 LibInterf::LibInterf(std::string path)
 {
     load_lib(path);
     init_lib();
 }
 
+  
+/*!
+ * \brief Destruktor LibInterf
+ */
 LibInterf::~LibInterf()
 {
     dlclose(this->handler);
 }
 
-
+  
+/*!
+ * \brief Inicjalizacja biblioteki
+ *
+ * \return Zwraca true gdy operacja się powiedzie
+ */
 bool LibInterf::init_lib()
 {
     void *new_cmd = dlsym(this->handler, "CreateCmd");
@@ -32,6 +45,12 @@ bool LibInterf::init_lib()
     return true;
 }
 
+  
+/*!
+ * \brief Ładowanie biblioteki
+ *
+ * \return Zwraca true gdy operacja się powiedzie
+ */
 bool LibInterf::load_lib(std::string path) {
     this->handler = dlopen(path.c_str(), RTLD_LAZY);
 
