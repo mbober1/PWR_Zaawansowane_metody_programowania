@@ -10,10 +10,8 @@ InterpProgram::InterpProgram()
 InterpProgram::~InterpProgram() {}
 
 
-bool InterpProgram::exec_program(std::string filename)
+bool InterpProgram::exec_program(std::string filename, Set4LibInterf &lib_set)
 {
-  Set4LibInterf lib_set;
-
   std::istringstream iss;
   this->exec_preprocesor(filename, iss);
   std::string cmd_name;

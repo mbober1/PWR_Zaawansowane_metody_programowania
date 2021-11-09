@@ -3,13 +3,7 @@
 /*!
  * \brief Konstruktor Set4LibInterf
  */
-Set4LibInterf::Set4LibInterf()
-{
-  add_lib("libs/libInterp4Move.so");
-  add_lib("libs/libInterp4Set.so");
-  add_lib("libs/libInterp4Rotate.so");
-  add_lib("libs/libInterp4Pause.so");
-}
+Set4LibInterf::Set4LibInterf() {}
 
 
 /*!

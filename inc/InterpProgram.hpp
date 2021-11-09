@@ -16,6 +16,6 @@ private:
 public:
   InterpProgram();
   ~InterpProgram();
-  bool exec_program(std::string filename);
+  bool exec_program(std::string filename, Set4LibInterf &lib_set);
 
 };
