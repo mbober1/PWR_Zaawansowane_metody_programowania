@@ -16,7 +16,13 @@ Set_MobileObjs & Configuration::get_obj_list()
   return this->obj_list;
 }
 
-void Configuration::add_mobile_obj(const std::string obj_name) 
+void Configuration::add_mobile_obj(const std::string &obj_name, const Vector3D &Scale, const std::string RGB) 
 {
-  // this->obj_list
+  Object_ptr new_object = std::make_shared<MobileObj>();
+
+  new_object->SetName(obj_name.c_str());
+  new_object->SetScale(Scale);
+  new_object->SetColour(RGB);
+
+  this->obj_list.insert({obj_name, new_object});
 }

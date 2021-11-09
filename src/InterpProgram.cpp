@@ -2,15 +2,21 @@
 #include "Set4LibInterf.hpp"
 
 
-InterpProgram::InterpProgram() 
+InterpProgram::InterpProgram(Set_MobileObjs &obj_list)
 {
-  scene.add_object("Obj1");
+  this->scene = new Scene(obj_list);
 }
 
-InterpProgram::~InterpProgram() {}
+InterpProgram::~InterpProgram() 
+{
+  if (nullptr != this->scene)
+  {
+    delete scene;
+  }
+}
 
 
-bool InterpProgram::exec_program(std::string filename, Set4LibInterf &lib_set)
+bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib_set)
 {
   std::istringstream iss;
   this->exec_preprocesor(filename, iss);
@@ -39,7 +45,7 @@ bool InterpProgram::exec_program(std::string filename, Set4LibInterf &lib_set)
     }
 
     
-    auto object = scene.FindMobileObj(object_name); // znajdź obiekt
+    auto object = scene->FindMobileObj(object_name); // znajdź obiekt
 
     if (nullptr == object)
     {
@@ -48,7 +54,6 @@ bool InterpProgram::exec_program(std::string filename, Set4LibInterf &lib_set)
       return false;
     }
 
-    cmd->PrintCmd();
     cmd->ExecCmd(object.get(), 0); // wykonaj operację
     delete cmd;
   }
@@ -62,7 +67,7 @@ bool InterpProgram::exec_program(std::string filename, Set4LibInterf &lib_set)
  *
  * \return Zwraca true gdy operacja się powiedzie
  */
-bool InterpProgram::exec_preprocesor(std::string name, std::istringstream &stream)
+bool InterpProgram::exec_preprocesor(const std::string &name, std::istringstream &stream)
 {
   bool result = false;
   std::string cmd = "cpp -P ";

@@ -10,12 +10,12 @@
 class InterpProgram
 {
 private:
-  Scene scene;
-  bool exec_preprocesor(std::string name, std::istringstream &stream);
+  Scene *scene;
+  bool exec_preprocesor(const std::string &name, std::istringstream &stream);
 
 public:
-  InterpProgram();
+  InterpProgram(Set_MobileObjs &obj_list);
   ~InterpProgram();
-  bool exec_program(std::string filename, Set4LibInterf &lib_set);
+  bool exec_program(const std::string &filename, Set4LibInterf &lib_set);
 
 };

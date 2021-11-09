@@ -1,4 +1,4 @@
 #define DROGA 34
 
-Move Obj1 20 DROGA
-Set Obj1 1 2 3 4 5
+Move Podstawa 20 DROGA
+Set Podstawa 1 2 3 4 5

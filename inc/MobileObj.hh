@@ -4,6 +4,7 @@
 
 #include <string>
 #include "Vector3D.hh"
+#include <sstream>
 
 
 /*!
@@ -65,6 +66,10 @@ class MobileObj {
   * musi to być nazwa unikalna wśród wszystkich obiektów na scenie.
   */
   std::string  _Name;
+
+  Vector3D  Scale;
+  int colour[3];
+
 
 public:
 /*!
@@ -148,6 +153,19 @@ public:
 * Udostępnia nazwę obiektu w trybie tylko do odczytu.
   */
   const std::string & GetName() const { return _Name; }
+
+
+  void SetScale(const Vector3D &Scale)
+  {
+    this->Scale = Scale;
+  }
+
+  void SetColour(const std::string RGB)
+  {
+    std::istringstream IStrm;
+    IStrm.str(RGB);
+    IStrm >> this->colour[0] >> this->colour[1] >> this->colour[2];
+  }
 };
 
 

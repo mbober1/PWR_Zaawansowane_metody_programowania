@@ -126,17 +126,19 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
  istringstream   IStrm;
  
  IStrm.str(sValue_Scale);
- double  Sx,Sy,Sz;
+ Vector3D  Scale;
+//  IStrm >> Scale;
+ IStrm >> Scale[0] >> Scale[1] >> Scale[2];
 
- IStrm >> Sx >> Sy >> Sz;
+
  if (IStrm.fail()) {
      cerr << " Blad!!!" << endl;
  } else {
      cout << " Czytanie wartosci OK!!!" << endl;
-     cout << "     " << Sx << "  " << Sy << "  " << Sz << endl;
+     cout << "     " << Scale[0] << "  " << Scale[1] << "  " << Scale[2] << endl;
  }
 
- // Tu trzeba wstawić odpowiednio własny kod ...
+ config.add_mobile_obj(sValue_Name, Scale, sValue_RGB);
 
  xercesc::XMLString::release(&sName_Name);
  xercesc::XMLString::release(&sName_Scale);
