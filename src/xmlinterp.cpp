@@ -374,7 +374,7 @@ bool read_file(const char* filename, Configuration &config)
 
     if (false == status) 
     {
-      std::cerr << "!!! Plik grammar/actions.xsd, '" << "!!! ktory zawiera opis gramatyki, nie moze zostac wczytany." << std::endl;
+      std::cerr << "Plik grammar/actions.xsd, ktory zawiera opis gramatyki, nie moze zostac wczytany." << std::endl;
       return false;
     }
 
