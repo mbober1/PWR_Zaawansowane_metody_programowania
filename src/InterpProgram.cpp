@@ -9,9 +9,14 @@ InterpProgram::InterpProgram(Set_MobileObjs &obj_list)
 
 InterpProgram::~InterpProgram() 
 {
+  if (nullptr != this->client)
+  {
+    delete this->client;
+  }
+
   if (nullptr != this->scene)
   {
-    delete scene;
+    delete this->scene;
   }
 }
 
@@ -22,6 +27,14 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
   this->exec_preprocesor(filename, iss);
   std::string cmd_name;
   std::string object_name;
+
+  this->client = new Sender(this->scene);
+
+  if (false == this->client->open_connection())
+  {
+    std::cerr << "Nie można otworzyć połączenia!" << std::endl;
+    return false;
+  }
 
   while (iss >> cmd_name)
   {
@@ -57,6 +70,8 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
     cmd->ExecCmd(object.get(), 0); // wykonaj operację
     delete cmd;
   }
+
+
 
   return true;
 }

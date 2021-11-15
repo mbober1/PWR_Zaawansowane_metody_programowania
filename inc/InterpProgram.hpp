@@ -2,6 +2,7 @@
 #include <sstream> 
 #include "Set4LibInterf.hpp"
 #include "Scene.hpp"
+#include "sender.hpp"
 
 #define LINE_SIZE 500
 
@@ -11,6 +12,7 @@ class InterpProgram
 {
 private:
   Scene *scene;
+  Sender *client;
   bool exec_preprocesor(const std::string &name, std::istringstream &stream);
 
 public:

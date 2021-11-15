@@ -22,10 +22,10 @@ LDFLAGS=-Wall -g
 
 
 
-interp: obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/InterpProgram.o obj/xmlinterp.o obj/Configuration.o
-	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/InterpProgram.o obj/xmlinterp.o obj/Configuration.o -ldl -lxerces-c
+interp: obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/InterpProgram.o obj/xmlinterp.o obj/Configuration.o obj/sender.o
+	g++ ${LDFLAGS} -o interp  obj/main.o obj/LibInterf.o obj/Scene.o obj/Set4LibInterf.o obj/InterpProgram.o obj/xmlinterp.o obj/Configuration.o obj/sender.o -ldl  -lpthread -lxerces-c
 
-obj/main.o: src/main.cpp inc/InterpProgram.hpp inc/xmlinterp.hh
+obj/main.o: src/main.cpp inc/InterpProgram.hpp inc/xmlinterp.hh inc/sender.hpp
 	g++ -c ${CPPFLAGS} -o obj/main.o src/main.cpp
 
 obj/LibInterf.o: src/LibInterf.cpp inc/LibInterf.hpp
@@ -34,7 +34,7 @@ obj/LibInterf.o: src/LibInterf.cpp inc/LibInterf.hpp
 obj/Set4LibInterf.o: src/Set4LibInterf.cpp inc/Set4LibInterf.hpp
 	g++ -c ${CPPFLAGS} -o obj/Set4LibInterf.o src/Set4LibInterf.cpp
 
-obj/InterpProgram.o: src/InterpProgram.cpp inc/InterpProgram.hpp
+obj/InterpProgram.o: src/InterpProgram.cpp inc/InterpProgram.hpp inc/sender.hpp
 	g++ -c ${CPPFLAGS} -o obj/InterpProgram.o src/InterpProgram.cpp
 
 obj/Scene.o: src/Scene.cpp inc/Scene.hpp
@@ -46,6 +46,8 @@ obj/xmlinterp.o: src/xmlinterp.cpp inc/xmlinterp.hh
 obj/Configuration.o: src/Configuration.cpp inc/Configuration.hh
 	g++ -c ${CPPFLAGS} -o obj/Configuration.o src/Configuration.cpp
 
+obj/sender.o: src/sender.cpp inc/sender.hpp inc/Scene.hpp	inc/AccessControl.hh inc/Port.hh inc/MobileObj.hh
+	g++ -c ${CPPFLAGS} -o obj/sender.o src/sender.cpp -lpthread
 
 clean:
 	rm -f obj/* interp core*

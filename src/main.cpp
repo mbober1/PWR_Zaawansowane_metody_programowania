@@ -4,6 +4,7 @@
 #include "InterpProgram.hpp"
 #include "xmlinterp.hh"
 #include "Configuration.hh"
+#include "sender.hpp"
 
 
 int main()
@@ -28,7 +29,8 @@ int main()
 
   Set_MobileObjs obj_list = config.get_obj_list(); // odczytaj listę obiektów
   InterpProgram program(obj_list);
-
+  
+  
   if (true == program.exec_program("commands", lib_set)) // wykonaj program
   {
     std::cerr << "Program pomyślnie zakończył pracę" << std::endl;
