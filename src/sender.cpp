@@ -30,7 +30,7 @@ void communication_thread(Sender *sender)
 * \brief Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem
 *        na scenę, na zmianę stanu które będzie ten obiekt reagował.
 */
-Sender::Sender(Scene *scene): _pScn(scene), connected(false)
+Sender::Sender(Scene *scene): scene(scene), connected(false)
 {
   this->client_thread = std::thread(communication_thread, this);
 }
@@ -84,25 +84,31 @@ void Sender::Watching_and_Sending()
 {
   while (ShouldCountinueLooping()) 
   {
-    // if (!_pScn->IsChanged())
-    // { 
-    //   usleep(10000); continue; 
-    // }
+    if (!scene->IsChanged())
+    { 
+      usleep(10000); 
+      continue; 
+    }
 
-    // _pScn->LockAccess();
+    scene->LockAccess();
+    this->send("Clear\n");
 
-    // //------- Przeglądanie tej kolekcji to uproszczony przykład
+    auto objects_list = scene->get_objects_ptrs();
 
-    // for (const GeomObject &rObj : _pScn->_Container4Objects) 
-    // {
-    //                 // Ta instrukcja to tylko uproszczony przykład
-    //   cout << rObj.GetStateDesc();
-    //   Send(_Socket,rObj.GetStateDesc()); // Tu musi zostać wywołanie odpowiedniej
-    //                       // metody/funkcji gerującej polecenia dla serwera.
-    // }
 
-    // _pScn->CancelChange();
-    // _pScn->UnlockAccess();
+    for (auto object_ptr : objects_list)
+    {
+      auto object = object_ptr.get();
+
+      std::string message = "UpdateObj";
+      message += object->GetStateDesc();
+
+      this->send(message.c_str());
+      std::cerr << message.c_str();
+    }
+    
+    scene->CancelChange();
+    scene->UnlockAccess();
   }
 }
 
@@ -194,13 +200,13 @@ bool ChangeState(Scene &Scn) //GeomObject *pObj, AccessControl  *pAccCtrl)
 
   while (true) 
   {
-    // Scn.LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
-    //                         // modyfikacje na obiekcie.
+    Scn.LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
+                            // modyfikacje na obiekcie.
     // for (GeomObject &rObj : Scn._Container4Objects) {
     //    if (!(Changed = rObj.IncStateIndex())) { Scn.UnlockAccess();  return false; }
     // }
-    // Scn.MarkChange();
-    // Scn.UnlockAccess();
+    Scn.MarkChange();
+    Scn.UnlockAccess();
     usleep(300000);
   }
   return true;

@@ -166,6 +166,18 @@ public:
     IStrm.str(RGB);
     IStrm >> this->colour[0] >> this->colour[1] >> this->colour[2];
   }
+
+
+
+
+  std::string GetStateDesc()
+  {
+    char buffer[100];
+    int len = sprintf(buffer, " Name=%s RotXYZ_deg=(%f,%f,%f)\n", this->_Name.c_str(), this->_Ang_Yaw_deg, this->_Ang_Pitch_deg, this->_Ang_Roll_deg);
+    std::string result(buffer, len);
+
+    return result;
+  }
 };
 
 

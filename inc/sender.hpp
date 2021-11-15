@@ -29,7 +29,7 @@ class Sender
   * \brief Wskaźnik na scenę, które stan jest przesyłany w postaci
   *        poleceń do serwera graficzneg.
   */
-  Scene          *_pScn = nullptr;
+  Scene          *scene = nullptr;
   std::thread client_thread;
   bool connected;
 
