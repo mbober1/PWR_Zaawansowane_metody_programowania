@@ -2,6 +2,7 @@
 
 #include "Scene.hpp"
 #include <thread>
+#include <unistd.h>
 
 
 /*!

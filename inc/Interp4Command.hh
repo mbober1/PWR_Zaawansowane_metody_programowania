@@ -5,6 +5,7 @@
 #include "MobileObj.hh"
 #include "sender.hpp"
 
+
 /*!
  * \file
  * \brief Definicja klasy Interp4Command

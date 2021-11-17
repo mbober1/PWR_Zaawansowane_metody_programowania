@@ -11,7 +11,7 @@ class Configuration {
 
 public:
   void add_lib(const std::string &lib_name);
-  void add_mobile_obj(const std::string &obj_name, const Vector3D &Scale, const std::string RGB);
+  void add_mobile_obj(const std::string &Name, const Vector3D &Shift, const Vector3D &Scale, const Vector3D &Rot, const Vector3D &Trans, const std::string RGB);
   std::vector<std::string> & get_lib_list();
   Set_MobileObjs & get_obj_list();
 };

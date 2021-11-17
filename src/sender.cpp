@@ -6,7 +6,6 @@
 #include <arpa/inet.h>
 #include "AccessControl.hh"
 #include "Port.hh"
-#include <unistd.h>
 #include <string.h>
 
 
@@ -112,6 +111,7 @@ void Sender::Watching_and_Sending()
     
     scene->CancelChange();
     scene->UnlockAccess();
+    usleep(300000);
   }
 }
 
@@ -127,6 +127,9 @@ int Sender::send(const char *message)
 {
   ssize_t  message_len = (ssize_t) strlen(message);
   ssize_t  send_len;
+
+  std::string debug(message, message_len);
+  std::cerr << debug;
 
   if (true == this->connected)
   {
@@ -188,37 +191,4 @@ bool Sender::open_connection()
     return false;
   }
   
-}
-
-
-
-
-/*!
- * \brief Przykład wykonywania pojedynczej operacji z animacją.
- *
- * Przykład wykonywania pojedynczej operacji z animacją.
- * \param[in] pObj - wskaźnik na obiekt, dla którego ma być wykonana dana operacja
- *                   zmiany jego stanu.
- * \param[in] pAccCtrl - wskaźnik na obiekt, poprzez który przekazywana jest informacja
- *                   o zmianie na scenie, zaś w trakcie dokonywania zmianay
- *                   zamykany jest dostęp do całej sceny.
- * \retval true - Jeśli dokonan zosała zmiana stanu wszystkich obiektów.
- * \retval false - w przypadku przeciwnym.
- */
-bool ChangeState(Scene &Scn) //GeomObject *pObj, AccessControl  *pAccCtrl)
-{
-  bool Changed;
-
-  while (true) 
-  {
-    Scn.LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
-                            // modyfikacje na obiekcie.
-    // for (GeomObject &rObj : Scn._Container4Objects) {
-    //    if (!(Changed = rObj.IncStateIndex())) { Scn.UnlockAccess();  return false; }
-    // }
-    Scn.MarkChange();
-    Scn.UnlockAccess();
-    usleep(300000);
-  }
-  return true;
 }
