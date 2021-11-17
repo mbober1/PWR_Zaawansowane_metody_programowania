@@ -1,5 +1,9 @@
 #include "Scene.hpp"
 
+
+/*!
+* \brief Inicjalizuje obiekt listą obiektów mobilnych.
+*/
 Scene::Scene(Set_MobileObjs &obj_list) : obj_list(obj_list) 
 {
   Set_MobileObjs::iterator it;
@@ -16,8 +20,17 @@ Scene::Scene(Set_MobileObjs &obj_list) : obj_list(obj_list)
 
 }
 
+
+/*!
+* \brief Deinicjalizuje obiekt.
+*/
 Scene::~Scene() {}
 
+
+/*!
+* \brief Szuka obiektu na scenie po nazwie.
+* \param[in] name - nazwa szukanego obiektu.
+*/
 Object_ptr Scene::FindMobileObj(std::string name) 
 {
   auto it = this->obj_list.find(name);
@@ -32,12 +45,22 @@ Object_ptr Scene::FindMobileObj(std::string name)
   }
 }
 
+
+/*!
+* \brief Dodaje obiekt do sceny.
+* \param[in] name - nazwa dodawanego obiektu.
+*/
 void Scene::add_object(std::string name) 
 {
   Object_ptr obj_ptr = std::make_shared<MobileObj>();
   this->obj_list.insert({name, obj_ptr});
 }
 
+
+/*!
+* \brief Zwraca nazwy wszystkich obiektów na scenie.
+* \return Wektor nazw obiektów.
+*/
 std::vector<std::string> Scene::get_objects_names() {
   std::vector<std::string> result;
   Set_MobileObjs::iterator it;
@@ -50,6 +73,11 @@ std::vector<std::string> Scene::get_objects_names() {
   return result;
 }
 
+
+/*!
+* \brief Zwraca wskaźniki wszystkich obiektów na scenie.
+* \return Wektor wskaźników obiektów.
+*/
 std::vector<Object_ptr> Scene::get_objects_ptrs()
 {
   std::vector<Object_ptr> result;

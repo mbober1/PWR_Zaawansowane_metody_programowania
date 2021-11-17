@@ -10,13 +10,11 @@
 #include <string.h>
 
 
-
-
 /*!
  * \brief Funkcja jest treścią wątku komunikacyjnego
  * 
  * Funkcja jest treścią wątku komunikacyjnego.
- * \param[in] rSender - odpowiada za śledenie zmian na scenie 
+ * \param[in] sender - odpowiada za śledenie zmian na scenie 
  *                      i przesyłanie do serwera graficznego
  *                      aktualnego stanu sceny, gdy uległ on zmianie.
  */
@@ -35,6 +33,10 @@ Sender::Sender(Scene *scene): scene(scene), connected(false)
   this->client_thread = std::thread(communication_thread, this);
 }
 
+
+/*!
+* \brief Deinicjalizuje obiekt, zamyka bezpiecznie połączenie oraz gniazdo.
+*/
 Sender::~Sender()
 {
   if (this->connected)
@@ -46,6 +48,7 @@ Sender::~Sender()
   this->client_thread.join();
   close(_Socket);
 }
+
 
 /*!
 * \brief Sprawdza, czy pętla wątku może być wykonywana.
@@ -113,17 +116,11 @@ void Sender::Watching_and_Sending()
 }
 
 
-
-
-
-
 /*!
  * \brief Wysyła napis do poprzez gniazdo sieciowe.
  *
  * Wysyła napis do poprzez gniazdo sieciowe.
- * \param[in] Sk2Server - deskryptor gniazda sieciowego, poprzez które 
- *                        ma zostać wysłany napis w sensie języka C.
- * \param[in] sMesg - zawiera napis, który ma zostać wysłany poprzez
+ * \param[in] message - zawiera napis, który ma zostać wysłany poprzez
  *                    gniazdo sieciowe.
  */
 int Sender::send(const char *message)
@@ -147,9 +144,7 @@ int Sender::send(const char *message)
 
 
 /*!
- * Otwiera połączenie sieciowe
- * \param[out]  rSocket - deskryptor gniazda, poprzez które może być
- *                        realizowana komunikacja sieciowa.
+ * Otwiera połączenie sieciowe.
  */
 bool Sender::open_connection()
 {

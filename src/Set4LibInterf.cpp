@@ -1,30 +1,19 @@
 #include "Set4LibInterf.hpp"
 
 /*!
- * \brief Konstruktor Set4LibInterf
+ * \brief Konstruktor Set4LibInterf.
  */
 Set4LibInterf::Set4LibInterf() {}
 
 
 /*!
- * \brief Destruktor Set4LibInterf
+ * \brief Destruktor Set4LibInterf.
  */
 Set4LibInterf::~Set4LibInterf() {}
 
   
-// /*!
-//  * \brief Zwraca iterator na obiekt o podanej nazwie
-//  *
-//  * \return Zwraca iterator na obiekt
-//  */
-// inline LibInterfMap::const_iterator Set4LibInterf::get(std::string name) 
-// {
-//   return lib_map.find(name);
-// }
-
-  
 /*!
- * \brief Dodawanie biblioteki o podanej nazwie
+ * \brief Dodawanie biblioteki o podanej nazwie.
  */
 void Set4LibInterf::add_lib(std::string path) 
 {
@@ -34,13 +23,18 @@ void Set4LibInterf::add_lib(std::string path)
 
   
 /*!
- * \brief Zwraca koniec mapy
+ * \brief Zwraca koniec mapy.
  */
 LibInterfMap::iterator Set4LibInterf::not_exist() 
 {
   return this->lib_map.end();
 }
 
+  
+/*!
+ * \brief Szuka biblioteki po nazwie.
+ * \return Zwraca wskaźnik na znalezioną bibliotekę.
+ */
 std::shared_ptr<LibInterf> Set4LibInterf::find(std::string name) {
   auto it = this->lib_map.find(name);
 

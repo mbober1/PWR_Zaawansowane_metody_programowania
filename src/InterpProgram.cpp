@@ -1,12 +1,20 @@
 #include "InterpProgram.hpp"
 #include "Set4LibInterf.hpp"
+#include <unistd.h>
 
 
+/*!
+* \brief Inicjalizuje obiekt listą obiektów mobilnych.
+*/
 InterpProgram::InterpProgram(Set_MobileObjs &obj_list)
 {
   this->scene = new Scene(obj_list);
 }
 
+
+/*!
+* \brief Deinicjalizuje obiekt.
+*/
 InterpProgram::~InterpProgram() 
 {
   if (nullptr != this->client)
@@ -20,7 +28,11 @@ InterpProgram::~InterpProgram()
   }
 }
 
-#include <unistd.h>
+  
+/*!
+ * \brief Uruchomienie wykonywania głównej pętli programu.
+ * \return Zwraca true gdy operacja się powiedzie
+ */
 bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib_set)
 {
   std::istringstream iss;
@@ -89,15 +101,12 @@ client->send(sConfigCmds);
     delete cmd;
   }
 
-
-
   return true;
 }
 
   
 /*!
  * \brief Uruchomienie preprocesora
- *
  * \return Zwraca true gdy operacja się powiedzie
  */
 bool InterpProgram::exec_preprocesor(const std::string &name, std::istringstream &stream)

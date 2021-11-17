@@ -18,7 +18,7 @@ int main()
   }
 
 
-  std::vector<std::string> lib_list = config.get_lib_list();  // odczytaj listę bibliotek
+  auto lib_list = config.get_lib_list();  // odczytaj listę bibliotek
   Set4LibInterf lib_set;
 
   for (size_t i = 0; i < lib_list.size(); i++) // załaduj odczytane biblioteki
@@ -27,7 +27,7 @@ int main()
   }
   
 
-  Set_MobileObjs obj_list = config.get_obj_list(); // odczytaj listę obiektów
+  auto obj_list = config.get_obj_list(); // odczytaj listę obiektów
   InterpProgram program(obj_list);
   
   

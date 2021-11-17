@@ -335,7 +335,7 @@ void XMLInterp4Config::warning(const xercesc::SAXParseException&  rException)
  * Czyta z pliku opis poleceń i dodaje je do listy komend,
  * które robot musi wykonać.
  * \param filename - (\b we.) nazwa pliku z opisem poleceń.
- * \param config - 
+ * \param config - obiekt z konfiguracją
  * \retval true - jeśli wczytanie zostało zrealizowane poprawnie,
  * \retval false - w przeciwnym przypadku.
  */
