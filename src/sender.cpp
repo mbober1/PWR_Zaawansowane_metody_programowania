@@ -39,7 +39,7 @@ Sender::Sender(Scene *scene): scene(scene), connected(false)
 */
 Sender::~Sender()
 {
-  if (this->connected)
+  if (true == this->connected)
   {
     this->send("Close\n");
   }
@@ -128,15 +128,22 @@ int Sender::send(const char *message)
   ssize_t  message_len = (ssize_t) strlen(message);
   ssize_t  send_len;
 
-  while ((send_len = write(this->_Socket, message, message_len)) > 0) 
+  if (true == this->connected)
   {
-    message_len -= send_len;
-    message += send_len;
-  }
+    while ((send_len = write(this->_Socket, message, message_len)) > 0) 
+    {
+      message_len -= send_len;
+      message += send_len;
+    }
 
-  if (send_len < 0) 
+    if (send_len < 0) 
+    {
+      std::cerr << "*** Blad przeslania napisu." << std::endl;
+    }
+  }
+  else
   {
-    std::cerr << "*** Blad przeslania napisu." << std::endl;
+    std::cerr << "*** Blad przeslania napisu. Połącznie nie zostało otwarte." << std::endl;
   }
 
   return 0;
@@ -148,30 +155,39 @@ int Sender::send(const char *message)
  */
 bool Sender::open_connection()
 {
-  struct sockaddr_in server;
-
-  bzero((char *)&server, sizeof(server));
-
-  server.sin_family = AF_INET;
-  server.sin_addr.s_addr = inet_addr("127.0.0.1");
-  server.sin_port = htons(PORT);
-
-  this->_Socket = socket(AF_INET, SOCK_STREAM, 0);
-
-  if (this->_Socket < 0) 
+  if (false == this->connected)
   {
-    std::cerr << "*** Blad otwarcia gniazda." << std::endl;
+    struct sockaddr_in server;
+
+    bzero((char *)&server, sizeof(server));
+
+    server.sin_family = AF_INET;
+    server.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server.sin_port = htons(PORT);
+
+    this->_Socket = socket(AF_INET, SOCK_STREAM, 0);
+
+    if (this->_Socket < 0) 
+    {
+      std::cerr << "*** Blad otwarcia gniazda." << std::endl;
+      return false;
+    }
+
+    if (connect(this->_Socket,(struct sockaddr*)&server,sizeof(server)) < 0)
+    {
+      std::cerr << "*** Brak mozliwosci polaczenia do portu: " << PORT << std::endl;
+      return false;
+    }
+
+    this->connected = true;
+    return true;
+  }
+  else
+  {
+    std::cerr << "*** Blad otwarcia gniazda. Połączenie jest już nawiązane." << std::endl;
     return false;
   }
-
-  if (connect(this->_Socket,(struct sockaddr*)&server,sizeof(server)) < 0)
-  {
-    std::cerr << "*** Brak mozliwosci polaczenia do portu: " << PORT << std::endl;
-    return false;
-  }
-
-  this->connected = true;
-  return true;
+  
 }
 
 

@@ -92,10 +92,10 @@ client->send(sConfigCmds);
 
     cmd->ExecCmd(object.get(), 0); // wykonaj operację
 
-    scene->LockAccess(); // Zamykamy dostęp do sceny, gdy wykonujemy
-    scene->MarkChange();
-    scene->UnlockAccess();
-    usleep(300000);
+    // scene->LockAccess();
+    // scene->MarkChange();
+    // scene->UnlockAccess();
+    // usleep(300000);
     
 
     delete cmd;
