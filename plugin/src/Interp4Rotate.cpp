@@ -52,11 +52,28 @@ const char* Interp4Rotate::GetCmdName() const
 /*!
  *
  */
-bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  double progress = pMobObj->GetAng_Pitch_deg();
+  double setpoint = progress + this->rotation_angle;
+
+  while (setpoint != progress)
+  {
+    pAccCtrl->LockAccess();
+
+    progress += this->angular_speed;
+
+    if (progress > setpoint)
+    {
+      progress = setpoint;
+    }
+
+    pMobObj->SetAng_Pitch_deg(progress);
+
+    pAccCtrl->MarkChange();
+    pAccCtrl->UnlockAccess();
+  }
+  
   return true;
 }
 

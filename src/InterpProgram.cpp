@@ -90,13 +90,7 @@ client->send(sConfigCmds);
       return false;
     }
 
-    cmd->ExecCmd(object.get(), 0); // wykonaj operację
-
-    // scene->LockAccess();
-    // scene->MarkChange();
-    // scene->UnlockAccess();
-    // usleep(300000);
-    
+    cmd->ExecCmd(object.get(), scene); // wykonaj operację
 
     delete cmd;
   }

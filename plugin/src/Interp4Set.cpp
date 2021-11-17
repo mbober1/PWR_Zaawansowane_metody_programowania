@@ -57,11 +57,22 @@ const char* Interp4Set::GetCmdName() const
 /*!
  *
  */
-bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  pAccCtrl->LockAccess();
+
+  Vector3D new_position = pMobObj->GetPositoin_m();
+  new_position[0] = this->coordinates_x;
+  new_position[1] = this->coordinates_y;
+  pMobObj->SetPosition_m(new_position);
+
+  pMobObj->SetAng_Pitch_deg(angle_OX);
+  pMobObj->SetAng_Roll_deg(angle_OY);
+  pMobObj->SetAng_Yaw_deg(angle_OZ);
+
+  pAccCtrl->MarkChange();
+  pAccCtrl->UnlockAccess();
+
   return true;
 }
 

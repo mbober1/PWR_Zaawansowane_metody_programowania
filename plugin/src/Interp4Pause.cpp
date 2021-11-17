@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Interp4Pause.hh"
+#include "unistd.h"
 
 using std::cout;
 using std::endl;
@@ -52,11 +53,12 @@ const char* Interp4Pause::GetCmdName() const
 /*!
  *
  */
-bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  int  Socket) const
+bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
-  /*
-   *  Tu trzeba napisać odpowiedni kod.
-   */
+  pAccCtrl->LockAccess();
+  sleep(delay);
+  pAccCtrl->UnlockAccess();
+
   return true;
 }
 
