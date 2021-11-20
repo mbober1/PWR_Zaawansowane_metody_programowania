@@ -18,7 +18,7 @@ End_Parallel_Actions
 Begin_Parallel_Actions Pause Ob_A 1000  /* Zawieszenie na 1 sek. */ End_Parallel_Actions
 
 Begin_Parallel_Actions
-Move Ob_A 10 10
+Move Ob_A 1 10
 Rotate Ob_B ROTATE_SPEED OZ 360 /* Rotate i Move wykonywane razem */
-Move Ob_B 10 200 /* powoduja jazde po luku */
+Move Ob_B 1 10 /* powoduja jazde po luku */
 End_Parallel_Actions

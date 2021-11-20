@@ -82,6 +82,7 @@ bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
     }
 
     position[0] = progress;
+    std::cerr << "position " << progress << std::endl;
     pMobObj->SetPosition_m(position);
 
     pAccCtrl->MarkChange();

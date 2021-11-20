@@ -57,7 +57,6 @@ class MobileObj {
 * Współrzędne aktualnej pozycji obiektu. Przyjmuje się,
 * że współrzędne wyrażone są w metrach.
   */
-  Vector3D  _Position_m;
 
   /*!
   * \brief Nazwa obiektu, która go indentyfikuje.
@@ -69,7 +68,6 @@ class MobileObj {
 
   Vector3D  Scale;
   Vector3D  Shift;
-  Vector3D  Trans;
   int colour[3];
 
 
@@ -141,6 +139,8 @@ public:
   */
   void SetPosition_m(const Vector3D &rPos_m) { _Position_m = rPos_m; }
 
+  Vector3D  _Position_m;
+
 
 /*!
   * \brief Zmienia nazwę obiektu.
@@ -187,7 +187,7 @@ public:
     this->colour[0], this->colour[1], this->colour[2],
     this->Scale[0], this->Scale[1], this->Scale[2],
     this->Shift[0], this->Shift[1], this->Shift[2],
-    this->Trans[0], this->Trans[1], this->Trans[2]
+    _Position_m[0], _Position_m[1], _Position_m[2]
     );
 
     std::string result(buffer, len);
