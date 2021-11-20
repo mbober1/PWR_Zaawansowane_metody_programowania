@@ -86,7 +86,7 @@ bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 
     pAccCtrl->MarkChange();
     pAccCtrl->UnlockAccess();
-    usleep(10000);
+    usleep(300000);
   }
   
   return true;

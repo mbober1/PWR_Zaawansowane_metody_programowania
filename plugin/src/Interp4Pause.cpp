@@ -56,9 +56,8 @@ const char* Interp4Pause::GetCmdName() const
 bool Interp4Pause::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
   pAccCtrl->LockAccess();
-  usleep(delay);
+  usleep(delay * 1000);
   pAccCtrl->UnlockAccess();
-  usleep(300000);
 
   return true;
 }

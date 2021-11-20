@@ -43,19 +43,19 @@ class AccessControl {
   /*!
    * \brief Zaznaczenie, że zmiana nastąpiła.
    */
-   void MarkChange() { _InternalGuard.lock();  _Changed = true;  _InternalGuard.unlock(); }
+   void MarkChange() { _InternalGuard.lock();  _Changed = true;  _InternalGuard.unlock(); std::cerr << "następiła zmiana" << std::endl; }
   /*!
    * \brief Skasowanie informacji, że zmiana nastąpiła.
    */
-   void CancelChange() { _InternalGuard.lock();  _Changed = false;  _InternalGuard.unlock(); }
+   void CancelChange() { _InternalGuard.lock();  _Changed = false;  _InternalGuard.unlock();  std::cerr << "koniec zmiany sceny" << std::endl; }
   /*!
    * \brief Zamyka dostęp całej sceny.
    */
-   void LockAccess() { _ExternalGuard.lock(); }
+   void LockAccess() { _ExternalGuard.lock(); std::cerr << "zamykanie sceny" << std::endl; }
   /*!
    * \brief Otwiera dostęp do całej sceny.
    */
-   void UnlockAccess() { _ExternalGuard.unlock(); } 
+   void UnlockAccess() { _ExternalGuard.unlock(); std::cerr << "otwieranie sceny" << std::endl; } 
 };
 
 

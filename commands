@@ -1,4 +1,24 @@
-#define DROGA 34
+#define ROTATE_SPEED 30
+/*
+* Przykªadowy zestaw polece«
+*/
 
-Rotate Podstawa 1 OX 90
-Rotate Podstawa -1 OX 90
+Begin_Parallel_Actions
+Rotate Ob_A ROTATE_SPEED OZ 180
+Rotate Ob_B ROTATE_SPEED OZ 180
+End_Parallel_Actions
+
+Begin_Parallel_Actions Pause Ob_A 1000  /* Zawieszenie na 1 sek. */ End_Parallel_Actions
+
+Begin_Parallel_Actions
+Rotate Ob_A ROTATE_SPEED OZ 180
+Rotate Ob_B ROTATE_SPEED OZ 180
+End_Parallel_Actions
+
+Begin_Parallel_Actions Pause Ob_A 1000  /* Zawieszenie na 1 sek. */ End_Parallel_Actions
+
+Begin_Parallel_Actions
+Move Ob_A 10 10
+Rotate Ob_B ROTATE_SPEED OZ 360 /* Rotate i Move wykonywane razem */
+Move Ob_B 10 200 /* powoduja jazde po luku */
+End_Parallel_Actions

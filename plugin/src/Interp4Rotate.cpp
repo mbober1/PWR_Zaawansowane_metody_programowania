@@ -70,10 +70,6 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) cons
   case 'Z':
     progress = pMobObj->GetAng_Yaw_deg();
     break;
-  
-  default:
-    std::cerr << "yyyyyyyyyyyyyyyyyyyyyyyyyyyy" << std::endl;
-    break;
   }
 
   int direction = this->angular_speed > 0 ? 1 : -1;
@@ -81,6 +77,8 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) cons
 
   while (setpoint != progress)
   {
+  std::cerr << "Move " << pMobObj->GetName() << std::endl;
+
     pAccCtrl->LockAccess();
 
     progress += this->angular_speed;
@@ -113,15 +111,11 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) cons
     case 'Z':
       pMobObj->SetAng_Yaw_deg(progress);
       break;
-    
-    default:
-      std::cerr << "yyyyyyyyyyyyyyyyyyyyyyyyyyyy" << std::endl;
-      break;
     }
 
     pAccCtrl->MarkChange();
     pAccCtrl->UnlockAccess();
-    usleep(10000);
+    usleep(300000);
   }
   
   return true;

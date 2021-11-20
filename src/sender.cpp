@@ -126,8 +126,8 @@ int Sender::send(const char *message)
   ssize_t  message_len = (ssize_t) strlen(message);
   ssize_t  send_len;
 
-  std::string debug(message, message_len);
-  std::cerr << debug;
+  // std::string debug(message, message_len);
+  // std::cerr << debug;
 
   if (true == this->connected)
   {

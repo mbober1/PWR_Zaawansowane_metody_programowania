@@ -68,39 +68,70 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
 
   while (iss >> cmd_name)
   {
-    iss >> object_name; // wczytaj nazwę obiektu
+    std::vector<std::thread*> threads_list;
 
-    auto library = lib_set.find(cmd_name); // wyszukaj plugin
-
-    if (nullptr == library)
+    while (!(cmd_name == "Begin_Parallel_Actions"))
     {
-      std::cout << "Nie znaleziono komendy: " << cmd_name << std::endl;
-      return false;
+      iss >> cmd_name;
+      std::cerr << "Szukam Begin_Parallel_Actions, znalazłem " << cmd_name << std::endl;
     }
 
-    auto cmd = library->create_cmd(); // utwórz interpreter
-
-    if(false == cmd->ReadParams(iss)) // wczytaj parametry
+    while (!(cmd_name == "End_Parallel_Actions"))
     {
-      std::cout << "Błąd czytania parametrów" << std::endl;
-      delete cmd;
-      return false;
+      iss >> cmd_name;    // wczytaj wykonywaną komendę
+
+      if (cmd_name == "End_Parallel_Actions")
+      {
+        std::cerr << "znalazłem " << cmd_name << std::endl;
+        break;
+      }
+
+      iss >> object_name; // wczytaj nazwę obiektu
+      std::cerr << "Komenda: " << cmd_name << " Obiekt: " << object_name << std::endl;
+
+      auto library = lib_set.find(cmd_name); // wyszukaj plugin
+
+      if (nullptr == library)
+      {
+        std::cout << "Nie znaleziono komendy: " << cmd_name << std::endl;
+        return false;
+      }
+
+      auto cmd = library->create_cmd(); // utwórz interpreter
+
+      if(false == cmd->ReadParams(iss)) // wczytaj parametry
+      {
+        std::cout << "Błąd czytania parametrów" << std::endl;
+        delete cmd;
+        return false;
+      }
+
+
+      auto object = scene->FindMobileObj(object_name); // znajdź obiekt
+
+      if (nullptr == object)
+      {
+        std::cout << "Nie można znaleźć obiektu o nazwie: " << object_name << std::endl;
+        delete cmd;
+        return false;
+      }
+
+      std::thread* new_thread = new std::thread([&](){cmd->ExecCmd(object.get(), scene);});
+      threads_list.push_back(new_thread);
+      std::cerr << "tworznie wątku" << std::endl;
+      // cmd->ExecCmd(object.get(), scene); // wykonaj operację
+
+      // delete cmd;
     }
 
-    
-    auto object = scene->FindMobileObj(object_name); // znajdź obiekt
-
-    if (nullptr == object)
+    for (auto thread_object : threads_list) // czekaj na zakończenie wszystkich zadań
     {
-      std::cout << "Nie można znaleźć obiektu o nazwie: " << object_name << std::endl;
-      delete cmd;
-      return false;
+      thread_object->join();
+      // delete thread_object;
     }
 
-    cmd->ExecCmd(object.get(), scene); // wykonaj operację
-
-    delete cmd;
   }
+   
 
   return true;
 }
