@@ -34,8 +34,9 @@ void Configuration::add_mobile_obj(const std::string &Name, const Vector3D &Shif
   Object_ptr new_object = std::make_shared<MobileObj>();
 
   new_object->SetName(Name.c_str());
-  new_object->SetPosition_m(Shift);
+  new_object->SetPosition_m(Trans);
   new_object->SetScale(Scale);
+  new_object->SetShift(Shift);
   new_object->SetAng_Pitch_deg(Rot[0]);
   new_object->SetAng_Roll_deg(Rot[1]);
   new_object->SetAng_Yaw_deg(Rot[2]);

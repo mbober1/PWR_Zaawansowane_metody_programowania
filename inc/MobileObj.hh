@@ -68,6 +68,8 @@ class MobileObj {
   std::string  _Name;
 
   Vector3D  Scale;
+  Vector3D  Shift;
+  Vector3D  Trans;
   int colour[3];
 
 
@@ -160,6 +162,11 @@ public:
     this->Scale = Scale;
   }
 
+  void SetShift(const Vector3D &Shift)
+  {
+    this->Shift = Shift;
+  }
+
   void SetColour(const std::string RGB)
   {
     std::istringstream IStrm;
@@ -172,13 +179,23 @@ public:
 
   std::string GetStateDesc()
   {
-    char buffer[100];
-    int len = sprintf(buffer, " Name=%s RotXYZ_deg=(%f,%f,%f)\n", this->_Name.c_str(), this->_Ang_Yaw_deg, this->_Ang_Pitch_deg, this->_Ang_Roll_deg);
+    char buffer[200];
+
+    int len = sprintf(buffer, " Name=%s RotXYZ_deg=(%f,%f,%f) RGB=(%d,%d,%d) Scale=(%f,%f,%f) Shift=(%f,%f,%f) Trans_m=(%f,%f,%f)\n", 
+    this->_Name.c_str(), 
+    this->_Ang_Yaw_deg, this->_Ang_Pitch_deg, this->_Ang_Roll_deg,
+    this->colour[0], this->colour[1], this->colour[2],
+    this->Scale[0], this->Scale[1], this->Scale[2],
+    this->Shift[0], this->Shift[1], this->Shift[2],
+    this->Trans[0], this->Trans[1], this->Trans[2]
+    );
+
     std::string result(buffer, len);
 
     return result;
   }
-};
 
+
+};
 
 #endif

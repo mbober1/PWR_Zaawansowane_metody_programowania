@@ -93,7 +93,6 @@ void Sender::Watching_and_Sending()
     }
 
     scene->LockAccess();
-    this->send("Clear\n");
 
     auto objects_list = scene->get_objects_ptrs();
 

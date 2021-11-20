@@ -133,12 +133,12 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
  IStrmShift >> Shift[0] >> Shift[1] >> Shift[2];
 
  istringstream   IStrmRot;
- IStrmRot.str(sValue_Shift);
+ IStrmRot.str(sValue_Rot);
  Vector3D  Rot;
  IStrmRot >> Rot[0] >> Rot[1] >> Rot[2];
 
  istringstream   IStrmTrans;
- IStrmTrans.str(sValue_Shift);
+ IStrmTrans.str(sValue_Trans);
  Vector3D  Trans;
  IStrmTrans >> Trans[0] >> Trans[1] >> Trans[2];
 

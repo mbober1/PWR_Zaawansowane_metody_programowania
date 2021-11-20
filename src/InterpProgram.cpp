@@ -48,15 +48,22 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
     return false;
   }
 
+  this->client->send("Clear\n");
 
-  ////////////////////////////////////////////
-  const char *sConfigCmds =
-"Clear\n"
-"AddObj Name=Podstawa RGB=(20,200,200) Scale=(4,2,1) Shift=(0.5,0,0) RotXYZ_deg=(0,-45,20) Trans_m=(-1,3,0)\n"
-"AddObj Name=Podstawa.Ramie1 RGB=(200,0,0) Scale=(3,3,1) Shift=(0.5,0,0) RotXYZ_deg=(0,-45,0) Trans_m=(4,0,0)\n"
-"AddObj Name=Podstawa.Ramie1.Ramie2 RGB=(100,200,0) Scale=(2,2,1) Shift=(0.5,0,0) RotXYZ_deg=(0,-45,0) Trans_m=(3,0,0)\n";      
-client->send(sConfigCmds);
-/////////////////////////////////////////////
+
+  auto objects_list = this->scene->get_objects_ptrs();
+
+  // send objects
+  for (auto object_ptr : objects_list)
+  {
+    auto object = object_ptr.get();
+
+    std::string message = "AddObj";
+    message += object->GetStateDesc();
+
+    this->client->send(message.c_str());
+  }
+
 
 
   while (iss >> cmd_name)
