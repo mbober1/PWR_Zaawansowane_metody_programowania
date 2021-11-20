@@ -54,8 +54,30 @@ const char* Interp4Rotate::GetCmdName() const
  */
 bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
-  double progress = pMobObj->GetAng_Pitch_deg();
-  double setpoint = progress + this->rotation_angle;
+  double progress;
+  char axis = this->axis_name.at(1);
+
+  switch (axis)
+  {
+  case 'X':
+    progress = pMobObj->GetAng_Roll_deg();
+    break;
+
+  case 'Y':
+    progress = pMobObj->GetAng_Pitch_deg();
+    break;
+
+  case 'Z':
+    progress = pMobObj->GetAng_Yaw_deg();
+    break;
+  
+  default:
+    std::cerr << "yyyyyyyyyyyyyyyyyyyyyyyyyyyy" << std::endl;
+    break;
+  }
+
+  int direction = this->angular_speed > 0 ? 1 : -1;
+  double setpoint = progress + this->rotation_angle * direction;
 
   while (setpoint != progress)
   {
@@ -63,16 +85,43 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) cons
 
     progress += this->angular_speed;
 
-    if (progress > setpoint)
+    if (direction == 1)
     {
-      progress = setpoint;
+      if (progress > setpoint)
+      {
+        progress = setpoint;
+      }
+    }
+    else
+    {
+      if (progress < setpoint)
+      {
+        progress = setpoint;
+      }
     }
 
-    pMobObj->SetAng_Pitch_deg(progress);
+    switch (axis)
+    {
+    case 'X':
+      pMobObj->SetAng_Roll_deg(progress);
+      break;
+
+    case 'Y':
+      pMobObj->SetAng_Pitch_deg(progress);
+      break;
+
+    case 'Z':
+      pMobObj->SetAng_Yaw_deg(progress);
+      break;
+    
+    default:
+      std::cerr << "yyyyyyyyyyyyyyyyyyyyyyyyyyyy" << std::endl;
+      break;
+    }
 
     pAccCtrl->MarkChange();
     pAccCtrl->UnlockAccess();
-    usleep(300000);
+    usleep(10000);
   }
   
   return true;

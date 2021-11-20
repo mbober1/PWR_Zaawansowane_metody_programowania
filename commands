@@ -1,4 +1,4 @@
 #define DROGA 34
 
-Move Podstawa 20 DROGA
-Rotate Podstawa 1 OX 180
+Rotate Podstawa 1 OX 90
+Rotate Podstawa -1 OX 90

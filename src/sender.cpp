@@ -110,7 +110,6 @@ void Sender::Watching_and_Sending()
     
     scene->CancelChange();
     scene->UnlockAccess();
-    usleep(300000);
   }
 }
 

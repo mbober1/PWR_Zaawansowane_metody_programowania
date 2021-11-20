@@ -57,17 +57,28 @@ bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
   auto position = pMobObj->GetPositoin_m();
   double progress = position[0];
-  double setpoint = progress + this->trip_length;
+  int direction = this->speed > 0 ? 1 : -1;
+  double setpoint = progress + this->trip_length * direction;
 
   while (setpoint != progress)
   {
     pAccCtrl->LockAccess();
 
     progress += this->speed;
-
-    if (progress > setpoint)
+    
+    if (direction == 1)
     {
-      progress = setpoint;
+      if (progress > setpoint)
+      {
+        progress = setpoint;
+      }
+    }
+    else
+    {
+      if (progress < setpoint)
+      {
+        progress = setpoint;
+      }
     }
 
     position[0] = progress;
@@ -75,7 +86,7 @@ bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 
     pAccCtrl->MarkChange();
     pAccCtrl->UnlockAccess();
-    usleep(300000);
+    usleep(10000);
   }
   
   return true;

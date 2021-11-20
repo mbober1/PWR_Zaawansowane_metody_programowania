@@ -66,8 +66,8 @@ bool Interp4Set::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
   new_position[1] = this->coordinates_y;
   pMobObj->SetPosition_m(new_position);
 
-  pMobObj->SetAng_Pitch_deg(angle_OX);
-  pMobObj->SetAng_Roll_deg(angle_OY);
+  pMobObj->SetAng_Pitch_deg(angle_OY);
+  pMobObj->SetAng_Roll_deg(angle_OX);
   pMobObj->SetAng_Yaw_deg(angle_OZ);
 
   pAccCtrl->MarkChange();
