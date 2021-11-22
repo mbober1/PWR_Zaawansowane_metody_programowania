@@ -14,6 +14,7 @@ private:
   Scene *scene;
   Sender *client;
   bool exec_preprocesor(const std::string &name, std::istringstream &stream);
+  void init_objects();
 
 public:
   InterpProgram(Set_MobileObjs &obj_list);

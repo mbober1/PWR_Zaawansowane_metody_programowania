@@ -8,8 +8,7 @@ Scene::Scene(Set_MobileObjs &obj_list) : obj_list(obj_list)
 {
   Set_MobileObjs::iterator it;
 
-  std::cerr << "Stworzono nową scenę!" << std::endl;
-  std::cerr << "Lista obiektów:" << std::endl;
+  std::cerr << std::endl << "Lista obiektów:" << std::endl;
 
   auto objects = this->get_objects_names();
 

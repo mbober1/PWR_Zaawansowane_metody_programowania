@@ -1,7 +1,5 @@
 #include "InterpProgram.hpp"
 #include "Set4LibInterf.hpp"
-#include <unistd.h>
-
 
 /*!
 * \brief Inicjalizuje obiekt listą obiektów mobilnych.
@@ -48,23 +46,7 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
     return false;
   }
 
-  this->client->send("Clear\n");
-
-
-  auto objects_list = this->scene->get_objects_ptrs();
-
-  // send objects
-  for (auto object_ptr : objects_list)
-  {
-    auto object = object_ptr.get();
-
-    std::string message = "AddObj";
-    message += object->GetStateDesc();
-
-    this->client->send(message.c_str());
-  }
-
-
+  this->init_objects();
 
   while (iss >> cmd_name)
   {
@@ -73,7 +55,6 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
     while (!(cmd_name == "Begin_Parallel_Actions"))
     {
       iss >> cmd_name;
-      std::cerr << "Szukam Begin_Parallel_Actions, znalazłem " << cmd_name << std::endl;
     }
 
     while (!(cmd_name == "End_Parallel_Actions"))
@@ -82,12 +63,10 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
 
       if (cmd_name == "End_Parallel_Actions")
       {
-        std::cerr << "znalazłem " << cmd_name << std::endl;
         break;
       }
 
       iss >> object_name; // wczytaj nazwę obiektu
-      std::cerr << "Komenda: " << cmd_name << " Obiekt: " << object_name << std::endl;
 
       auto library = lib_set.find(cmd_name); // wyszukaj plugin
 
@@ -116,25 +95,19 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
         return false;
       }
 
-      std::thread* new_thread = new std::thread([&](){cmd->ExecCmd(object.get(), scene);});
+      std::thread* new_thread = new std::thread(&Interp4Command::ExecCmd, cmd, object.get(), scene);
       threads_list.push_back(new_thread);
-      std::cerr << "tworznie wątku" << std::endl;
-      // cmd->ExecCmd(object.get(), scene); // wykonaj operację
-
-      // delete cmd;
     }
 
     for (auto thread_object : threads_list) // czekaj na zakończenie wszystkich zadań
     {
       thread_object->join();
-      // delete thread_object;
+      delete thread_object;
     }
-
   }
-   
-
   return true;
 }
+
 
   
 /*!
@@ -162,4 +135,23 @@ bool InterpProgram::exec_preprocesor(const std::string &name, std::istringstream
   }
 
   return result;
+}
+
+
+/*!
+ * \brief Inicjalizuje obiekty na scenie
+ */
+void InterpProgram::init_objects()
+{
+  auto objects_list = this->scene->get_objects_ptrs();
+
+  for (auto object_ptr : objects_list)
+  {
+    auto object = object_ptr.get();
+
+    std::string message = "AddObj";
+    message += object->GetStateDesc();
+
+    this->client->send(message.c_str());
+  }
 }

@@ -55,36 +55,20 @@ const char* Interp4Move::GetCmdName() const
  */
 bool Interp4Move::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) const
 {
-  auto position = pMobObj->GetPositoin_m();
-  double progress = position[0];
   int direction = this->speed > 0 ? 1 : -1;
-  double setpoint = progress + this->trip_length * direction;
+  int iterations = std::floor(this->trip_length/this->speed);
 
-  while (setpoint != progress)
+  for (int i = 0; i < iterations; ++i)
   {
     pAccCtrl->LockAccess();
 
-    progress += this->speed;
+    Vector3D position = pMobObj->GetPositoin_m();
+    double angle = pMobObj->GetAng_Roll_deg();
+
+    position[0] += this->speed * direction * cos(M_PI * angle/180);
+    position[1] += this->speed * direction * sin(M_PI * angle/180);
     
-    if (direction == 1)
-    {
-      if (progress > setpoint)
-      {
-        progress = setpoint;
-      }
-    }
-    else
-    {
-      if (progress < setpoint)
-      {
-        progress = setpoint;
-      }
-    }
-
-    position[0] = progress;
-    std::cerr << "position " << progress << std::endl;
     pMobObj->SetPosition_m(position);
-
     pAccCtrl->MarkChange();
     pAccCtrl->UnlockAccess();
     usleep(300000);

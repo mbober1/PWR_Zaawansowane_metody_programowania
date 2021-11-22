@@ -26,20 +26,14 @@ XMLInterp4Config::XMLInterp4Config(Configuration &rConfig) : config(rConfig)
  * Metoda wywoływana jest bezpośrednio przed rozpoczęciem
  * przetwarzana dokumentu XML.
  */
-void XMLInterp4Config::startDocument()
-{
-  cout << "*** Rozpoczecie przetwarzania dokumentu XML." << endl;
-}
+void XMLInterp4Config::startDocument() {}
 
 
 /*!
  * Metoda wywoływana jest bezpośrednio po zakończeniu
  * przetwarzana dokumentu XML.
  */
-void XMLInterp4Config::endDocument()
-{
-  cout << "=== Koniec przetwarzania dokumentu XML." << endl;
-}
+void XMLInterp4Config::endDocument() {}
 
 
 
@@ -108,19 +102,6 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
  char* sValue_Trans = xercesc::XMLString::transcode(rAttrs.getValue(4));
  char* sValue_RGB     = xercesc::XMLString::transcode(rAttrs.getValue(5));
 
-
- //-----------------------------------------------------------------------------
- // Wyświetlenie nazw atrybutów i ich "wartości"
- //
- cout << " Atrybuty:" << endl
-      << "     " << sName_Name << " = \"" << sValue_Name << "\"" << endl
-      << "     " << sName_Shift << " = \"" << sValue_Shift << "\"" << endl
-      << "     " << sName_Scale << " = \"" << sValue_Scale << "\"" << endl
-      << "     " << sName_Rot << " = \"" << sValue_Rot << "\"" << endl   
-      << "     " << sName_Trans << " = \"" << sValue_Trans << "\"" << endl   
-      << "     " << sName_RGB << " = \"" << sValue_RGB << "\"" << endl   
-      << endl; 
- //-----------------------------------------------------------------------------
 
  istringstream   IStrmScale;
  IStrmScale.str(sValue_Scale);
@@ -219,7 +200,6 @@ void XMLInterp4Config::startElement(  const   XMLCh* const            pURI,
                                     )
 {
   char* sElemName = xercesc::XMLString::transcode(pLocalName);
-  cout << "+++ Poczatek elementu: "<< sElemName << endl;
 
   WhenStartElement(sElemName, rAttrs);
 
@@ -263,10 +243,6 @@ void XMLInterp4Config::endElement(  const   XMLCh* const    pURI,
    char* sURI =  xercesc::XMLString::transcode(pURI);
    char* sElemName = xercesc::XMLString::transcode(pLocalName);
    char* sQName =  xercesc::XMLString::transcode(pQName);
-   cout << "   URI: " << sURI << endl;
-   cout << " QName: " << sQName << endl;
-   cout << "----- Koniec elementu: "<< sElemName << endl;
-
    xercesc::XMLString::release(&sElemName);
 }
 
