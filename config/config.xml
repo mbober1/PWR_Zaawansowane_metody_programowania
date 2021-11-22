@@ -6,7 +6,7 @@
       <Lib Name="libs/libInterp4Set.so"/>
    </Plugins>
    <Objects>
-     <Cube Name="Samolot" Shift="0 0 0" Scale="1.5 0.7 0.5" RotXYZ_deg="0 0 0" Trans_m="0 3 3" RGB="191 54 12"/>
+     <Cube Name="Samolot" Shift="0 0 0" Scale="1.5 0.7 0.5" RotXYZ_deg="0 0 30" Trans_m="0 3 3" RGB="191 54 12"/>
      <Cube Name="Samolot.smiglo" Shift="0 0 0" Scale="0.05 0.05 0.05" RotXYZ_deg="0 -90 0" Trans_m="0.8 0 0" RGB="173 18 18"/>
      <Cube Name="Samolot.smiglo.plat1" Shift="0 0 0" Scale="1 0.05 0.05" RotXYZ_deg="0 0 0" Trans_m="0 0.05 0" RGB="3 155 229"/>
      <Cube Name="Samolot.smiglo.plat2" Shift="0 0 0" Scale="1 0.05 0.05" RotXYZ_deg="-90 0 0" Trans_m="0 0.05 0" RGB="3 155 229"/>

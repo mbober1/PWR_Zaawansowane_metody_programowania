@@ -113,7 +113,7 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) cons
 
     pAccCtrl->MarkChange();
     pAccCtrl->UnlockAccess();
-    usleep(300000);
+    usleep(100000);
   }
   
   return true;

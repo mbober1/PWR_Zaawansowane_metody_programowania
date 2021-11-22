@@ -7,11 +7,11 @@
 #include "sender.hpp"
 
 
-int main()
+int main(int argc, char *argv[])
 {
   Configuration config; // stwórz konfigurację
 
-  if (false == read_file("config/config.xml", config))  // odczytaj konfigurację
+  if (false == read_file(argv[2], config))  // odczytaj konfigurację
   {
     std::cerr << "Błąd ładowania XMLa" << std::endl;
     return 1;
@@ -32,7 +32,7 @@ int main()
   InterpProgram program(obj_list);
   
   
-  if (true == program.exec_program("commands", lib_set)) // wykonaj program
+  if (true == program.exec_program(std::string(argv[1]), lib_set)) // wykonaj program
   {
     std::cerr << "Program pomyślnie zakończył pracę" << std::endl;
     return 0;
