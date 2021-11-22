@@ -95,19 +95,19 @@ bool InterpProgram::exec_program(const std::string &filename, Set4LibInterf &lib
         return false;
       }
 
-      std::thread* new_thread = new std::thread([&](){cmd->ExecCmd(object.get(), scene);});
+      std::thread* new_thread = new std::thread(&Interp4Command::ExecCmd, cmd, object.get(), scene);
       threads_list.push_back(new_thread);
     }
 
     for (auto thread_object : threads_list) // czekaj na zakończenie wszystkich zadań
     {
       thread_object->join();
+      delete thread_object;
     }
-
   }
-
   return true;
 }
+
 
   
 /*!
