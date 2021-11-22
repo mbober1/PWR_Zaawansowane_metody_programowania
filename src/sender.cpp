@@ -88,7 +88,7 @@ void Sender::Watching_and_Sending()
   {
     if (!scene->IsChanged())
     { 
-      usleep(10000); 
+      usleep(30000); 
       continue; 
     }
 
@@ -105,7 +105,6 @@ void Sender::Watching_and_Sending()
       message += object->GetStateDesc();
 
       this->send(message.c_str());
-      std::cerr << message.c_str();
     }
     
     scene->CancelChange();
@@ -125,9 +124,6 @@ int Sender::send(const char *message)
 {
   ssize_t  message_len = (ssize_t) strlen(message);
   ssize_t  send_len;
-
-  // std::string debug(message, message_len);
-  // std::cerr << debug;
 
   if (true == this->connected)
   {
@@ -181,6 +177,8 @@ bool Sender::open_connection()
     }
 
     this->connected = true;
+    this->send("Clear\n");
+
     return true;
   }
   else

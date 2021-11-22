@@ -21,6 +21,7 @@ int main()
   auto lib_list = config.get_lib_list();  // odczytaj listę bibliotek
   Set4LibInterf lib_set;
 
+  std::cout << std::endl << "Ładowanie bibliotek:" << std::endl;
   for (size_t i = 0; i < lib_list.size(); i++) // załaduj odczytane biblioteki
   {
     lib_set.add_lib(lib_list.at(i));

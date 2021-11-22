@@ -1,24 +1,23 @@
 #define ROTATE_SPEED 30
 /*
-* Przykªadowy zestaw polece«
+* Przykładowy zestaw poleceń
 */
 
+
+
+
 Begin_Parallel_Actions
-Rotate Ob_A ROTATE_SPEED OZ 180
-Rotate Ob_B ROTATE_SPEED OZ 180
+Move Samolot 0.1 2
+Rotate Samolot -5 OX 90
+Rotate Samolot.smiglo 20 OY 360
 End_Parallel_Actions
 
-Begin_Parallel_Actions Pause Ob_A 1000  /* Zawieszenie na 1 sek. */ End_Parallel_Actions
 
 Begin_Parallel_Actions
-Rotate Ob_A ROTATE_SPEED OZ 180
-Rotate Ob_B ROTATE_SPEED OZ 180
-End_Parallel_Actions
-
-Begin_Parallel_Actions Pause Ob_A 1000  /* Zawieszenie na 1 sek. */ End_Parallel_Actions
-
-Begin_Parallel_Actions
-Move Ob_A 1 10
-Rotate Ob_B ROTATE_SPEED OZ 360 /* Rotate i Move wykonywane razem */
-Move Ob_B 1 10 /* powoduja jazde po luku */
+Rotate Blok1 20 OZ 360
+Rotate Blok1 20 OY 360
+Rotate Blok2 20 OX 360
+Rotate Blok3 30 OX 360
+Rotate Blok4 -20 OX 360
+Rotate Blok5 -30 OX 360
 End_Parallel_Actions

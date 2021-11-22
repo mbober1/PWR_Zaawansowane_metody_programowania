@@ -77,8 +77,6 @@ bool Interp4Rotate::ExecCmd( MobileObj  *pMobObj,  AccessControl *pAccCtrl) cons
 
   while (setpoint != progress)
   {
-  std::cerr << "Move " << pMobObj->GetName() << std::endl;
-
     pAccCtrl->LockAccess();
 
     progress += this->angular_speed;
