@@ -1,0 +1,7 @@
+<map id="XMLInterp4Config::WhenStartElement" name="XMLInterp4Config::WhenStartElement">
+<area shape="rect" id="node1" title="Wykonuje operacje związane z danym elementem XML." alt="" coords="5,39,219,80"/>
+<area shape="rect" id="node2" href="$classXMLInterp4Config.html#a5888326f2d9145908ff308e9aeff795e" title="Analizuje atrybuty i odpwiednio je interpretuje." alt="" coords="267,5,461,47"/>
+<area shape="rect" id="node4" href="$classXMLInterp4Config.html#a18cd48f030387cdc1c52211856735f33" title="Analizuje atrybuty i odpwiednio je interpretuje." alt="" coords="267,71,461,112"/>
+<area shape="rect" id="node3" href="$classConfiguration.html#a1d9bae8b657f38614f50dab4b7109a57" title="Dodaj obiekt do listy." alt="" coords="521,5,662,47"/>
+<area shape="rect" id="node5" href="$classConfiguration.html#a6fc07a61b3332f07ed59660b19a93391" title="Dodaj bilbiotekę do listy." alt="" coords="509,78,673,105"/>
+</map>

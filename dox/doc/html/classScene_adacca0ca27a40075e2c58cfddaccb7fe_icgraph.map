@@ -1,0 +1,9 @@
+<map id="Scene::get_objects_ptrs" name="Scene::get_objects_ptrs">
+<area shape="rect" id="node1" title="Zwraca wskaźniki wszystkich obiektów na scenie." alt="" coords="608,46,784,73"/>
+<area shape="rect" id="node2" href="$classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d" title="Inicjalizuje obiekty na scenie." alt="" coords="405,5,549,47"/>
+<area shape="rect" id="node5" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="393,71,560,112"/>
+<area shape="rect" id="node3" href="$classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb" title="Uruchomienie wykonywania głównej pętli programu." alt="" coords="183,5,336,47"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="38,13,93,39"/>
+<area shape="rect" id="node6" href="$sender_8cpp.html#acb730f2935c51dc85cbf442b0de5d065" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="173,78,345,105"/>
+<area shape="rect" id="node7" href="$classSender.html#a1031d340fa07063ca90b0c4a9c53fac3" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="5,78,125,105"/>
+</map>

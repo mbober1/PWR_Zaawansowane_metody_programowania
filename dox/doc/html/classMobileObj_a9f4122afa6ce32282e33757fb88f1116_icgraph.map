@@ -1,0 +1,5 @@
+<map id="MobileObj::GetPositoin_m" name="MobileObj::GetPositoin_m">
+<area shape="rect" id="node1" title="Udostępnia współrzędne położenia obiektu w trybie tylko do odczytu." alt="" coords="225,31,416,57"/>
+<area shape="rect" id="node2" href="$classInterp4Move.html#ac4365c2fa39f3b5c95495862677610ef" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="5,5,177,32"/>
+<area shape="rect" id="node3" href="$classInterp4Set.html#a71680137e9147fbc55a35590b9c9040b" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="13,56,170,83"/>
+</map>

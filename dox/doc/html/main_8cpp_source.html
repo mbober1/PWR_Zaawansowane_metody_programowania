@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy main.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter<span id="projectnumber">&#160;0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.2 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="main_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;sstream&gt;</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="MobileObj_8hh.html">MobileObj.hh</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="InterpProgram_8hpp.html">InterpProgram.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="xmlinterp_8hh.html">xmlinterp.hh</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Configuration_8hh.html">Configuration.hh</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="sender_8hpp.html">sender.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   10</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <a class="code hl_class" href="classConfiguration.html">Configuration</a> config; <span class="comment">// stwórz konfigurację</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keywordflow">if</span> (<span class="keyword">false</span> == <a class="code hl_function" href="xmlinterp_8hh.html#a7a29effacfffcc3adad9f3d8f1cdc30e">read_file</a>(argv[2], config))  <span class="comment">// odczytaj konfigurację</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;Błąd ładowania XMLa&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keyword">auto</span> lib_list = config.<a class="code hl_function" href="classConfiguration.html#a7e337d4780f80e2c53b04f1ecb6a051b">get_lib_list</a>();  <span class="comment">// odczytaj listę bibliotek</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <a class="code hl_class" href="classSet4LibInterf.html">Set4LibInterf</a> lib_set;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Ładowanie bibliotek:&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; lib_list.size(); i++) <span class="comment">// załaduj odczytane biblioteki</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    lib_set.<a class="code hl_function" href="classSet4LibInterf.html#a53f88851f4ede6db6bcc84c52f80a4be">add_lib</a>(lib_list.at(i));</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">auto</span> obj_list = config.<a class="code hl_function" href="classConfiguration.html#a2678d92fb5825fbc96d0bbc00608a402">get_obj_list</a>(); <span class="comment">// odczytaj listę obiektów</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="classInterpProgram.html">InterpProgram</a> program(obj_list);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">if</span> (<span class="keyword">true</span> == program.<a class="code hl_function" href="classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb">exec_program</a>(std::string(argv[1]), lib_set)) <span class="comment">// wykonaj program</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;Program pomyślnie zakończył pracę&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;Program napotkał błąd&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+<div class="ttc" id="aConfiguration_8hh_html"><div class="ttname"><a href="Configuration_8hh.html">Configuration.hh</a></div></div>
+<div class="ttc" id="aInterpProgram_8hpp_html"><div class="ttname"><a href="InterpProgram_8hpp.html">InterpProgram.hpp</a></div></div>
+<div class="ttc" id="aMobileObj_8hh_html"><div class="ttname"><a href="MobileObj_8hh.html">MobileObj.hh</a></div></div>
+<div class="ttc" id="aclassConfiguration_html"><div class="ttname"><a href="classConfiguration.html">Configuration</a></div><div class="ttdoc">Wczytuje zdefiniowaną konfiguarcję</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00012">Configuration.hh:12</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_a2678d92fb5825fbc96d0bbc00608a402"><div class="ttname"><a href="classConfiguration.html#a2678d92fb5825fbc96d0bbc00608a402">Configuration::get_obj_list</a></div><div class="ttdeci">Set_MobileObjs &amp; get_obj_list()</div><div class="ttdoc">Pobierz listę dostępnych bibliotek w postaci mapy.</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8cpp_source.html#l00026">Configuration.cpp:26</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_a7e337d4780f80e2c53b04f1ecb6a051b"><div class="ttname"><a href="classConfiguration.html#a7e337d4780f80e2c53b04f1ecb6a051b">Configuration::get_lib_list</a></div><div class="ttdeci">std::vector&lt; std::string &gt; &amp; get_lib_list()</div><div class="ttdoc">Pobierz listę nazw dostępnych bibliotek w postaci wektora.</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8cpp_source.html#l00016">Configuration.cpp:16</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html"><div class="ttname"><a href="classInterpProgram.html">InterpProgram</a></div><div class="ttdoc">Przechowuje informacje o scenie i połączeniu.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8hpp_source.html#l00015">InterpProgram.hpp:16</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_aa7cb5496be865ca587358bd4b17489bb"><div class="ttname"><a href="classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb">InterpProgram::exec_program</a></div><div class="ttdeci">bool exec_program(const std::string &amp;filename, Set4LibInterf &amp;lib_set)</div><div class="ttdoc">Uruchomienie wykonywania głównej pętli programu.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00034">InterpProgram.cpp:34</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html"><div class="ttname"><a href="classSet4LibInterf.html">Set4LibInterf</a></div><div class="ttdoc">Przechowuje listę wtyczek i zarządza nią.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8hpp_source.html#l00014">Set4LibInterf.hpp:15</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_a53f88851f4ede6db6bcc84c52f80a4be"><div class="ttname"><a href="classSet4LibInterf.html#a53f88851f4ede6db6bcc84c52f80a4be">Set4LibInterf::add_lib</a></div><div class="ttdeci">void add_lib(std::string path)</div><div class="ttdoc">Dodawanie biblioteki o podanej nazwie.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8cpp_source.html#l00018">Set4LibInterf.cpp:18</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00010">main.cpp:10</a></div></div>
+<div class="ttc" id="asender_8hpp_html"><div class="ttname"><a href="sender_8hpp.html">sender.hpp</a></div></div>
+<div class="ttc" id="axmlinterp_8hh_html"><div class="ttname"><a href="xmlinterp_8hh.html">xmlinterp.hh</a></div></div>
+<div class="ttc" id="axmlinterp_8hh_html_a7a29effacfffcc3adad9f3d8f1cdc30e"><div class="ttname"><a href="xmlinterp_8hh.html#a7a29effacfffcc3adad9f3d8f1cdc30e">read_file</a></div><div class="ttdeci">bool read_file(const char *filename, Configuration &amp;config)</div><div class="ttdef"><b>Definition:</b> <a href="xmlinterp_8cpp_source.html#l00312">xmlinterp.cpp:312</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Wygenerowano Pt, 26 lis 2021 10:31:50 dla Interpreter programem <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

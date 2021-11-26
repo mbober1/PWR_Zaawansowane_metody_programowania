@@ -1,0 +1,5 @@
+<map id="MobileObj::SetAng_Roll_deg" name="MobileObj::SetAng_Roll_deg">
+<area shape="rect" id="node1" title="Zmienia wartość kąta roll." alt="" coords="232,31,437,57"/>
+<area shape="rect" id="node2" href="$classInterp4Rotate.html#aaf7ec6456f0f1dfb475f82bb2fa361c3" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="5,5,184,32"/>
+<area shape="rect" id="node3" href="$classInterp4Set.html#a71680137e9147fbc55a35590b9c9040b" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="16,56,173,83"/>
+</map>

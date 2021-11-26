@@ -9,6 +9,13 @@
 typedef std::map<std::string, std::shared_ptr<MobileObj>> Set_MobileObjs;
 typedef std::shared_ptr<MobileObj> Object_ptr;
 
+
+
+/*!
+ * \brief Interfejs do zarządzania obiektami na scenie. 
+ *
+ *  Przechowuje obiekty.
+ */
 class Scene : public AccessControl 
 {
 private:

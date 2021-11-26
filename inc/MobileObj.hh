@@ -1,28 +1,18 @@
 #ifndef MOBILEOBJ_HH
 #define MOBILEOBJ_HH
 
-
 #include <string>
 #include "Vector3D.hh"
 #include <sstream>
 
 
 /*!
- * \file
  * \brief Zawiera definicję klasy MobileObj
  *
  * Plik zawiera definicję klasy MobileObj.
  * Definicja to może być rozszerzona i zmienione mogą
  * być nazwy pól. Obowiązkowe są jedynie nazwy metod.
  */
-
-
-
-
-/*!
-* Nazwy pól klasy są jedynie propozycją i mogą być zmienione
-* Nazwy metod są obowiązujące.
-*/
 class MobileObj {
   /*!
   * \brief Kąt \e yaw reprezentuje rotację zgodnie z ruchem wskazówek zegara

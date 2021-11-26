@@ -1,0 +1,4 @@
+<map id="Sender::CancelCountinueLooping" name="Sender::CancelCountinueLooping">
+<area shape="rect" id="node1" title="Powoduje przerwanie działania pętli wątku." alt="" coords="184,5,420,32"/>
+<area shape="rect" id="node2" href="$classSender.html#a99dd9c6aa7d546320d619aca9067fdc6" title="Deinicjalizuje obiekt, zamyka bezpiecznie połączenie oraz gniazdo." alt="" coords="5,5,136,32"/>
+</map>

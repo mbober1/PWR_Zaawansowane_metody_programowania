@@ -7,7 +7,11 @@
 #define LINE_SIZE 500
 
 
-
+/*!
+ * \brief Przechowuje informacje o scenie i połączeniu
+ *
+ *  Przechowuje informacje o scenie i połączeniu.
+ */
 class InterpProgram
 {
 private:

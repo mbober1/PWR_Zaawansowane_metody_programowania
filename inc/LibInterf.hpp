@@ -3,6 +3,12 @@
 #include <map>
 #include "Interp4Command.hh"
 
+
+/*!
+ * \brief Interfejs ładowania wtyczek 
+ *
+ *  Przechowuje uchwyt i zarządza biblioteką 
+ */
 class LibInterf
 {
 private:

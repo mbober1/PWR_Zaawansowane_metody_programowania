@@ -4,7 +4,11 @@
 #include <vector>
 #include "Scene.hpp"
 
-
+/*!
+ * \brief Wczytuje zdefiniowaną konfiguarcję
+ *
+ *  Przechowuje informacje o startowej konfiguracji
+ */
 class Configuration {
   std::vector<std::string> lib_list;
   Set_MobileObjs obj_list;

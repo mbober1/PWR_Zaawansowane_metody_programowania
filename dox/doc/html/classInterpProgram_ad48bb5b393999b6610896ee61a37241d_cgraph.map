@@ -1,0 +1,5 @@
+<map id="InterpProgram::init_objects" name="InterpProgram::init_objects">
+<area shape="rect" id="node1" title="Inicjalizuje obiekty na scenie." alt="" coords="5,23,149,65"/>
+<area shape="rect" id="node2" href="$classScene.html#adacca0ca27a40075e2c58cfddaccb7fe" title="Zwraca wskaźniki wszystkich obiektów na scenie." alt="" coords="197,5,373,32"/>
+<area shape="rect" id="node3" href="$classSender.html#a882da01dcec44b27de1f66d15ef4c17c" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="232,56,339,83"/>
+</map>

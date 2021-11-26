@@ -1,0 +1,5 @@
+<map id="Interp4Pause::ExecCmd" name="Interp4Pause::ExecCmd">
+<area shape="rect" id="node1" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="5,31,180,57"/>
+<area shape="rect" id="node2" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny." alt="" coords="235,5,433,32"/>
+<area shape="rect" id="node3" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny." alt="" coords="228,56,440,83"/>
+</map>

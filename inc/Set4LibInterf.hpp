@@ -4,6 +4,13 @@
 #include <memory>
 
 typedef std::map<std::string, std::shared_ptr<LibInterf>> LibInterfMap;
+
+
+/*!
+ * \brief Przechowuje listę wtyczek i zarządza nią. 
+ *
+ *  Przechowuje uchwyty i zarządza bibliotekami
+ */
 class Set4LibInterf
 {
 private:

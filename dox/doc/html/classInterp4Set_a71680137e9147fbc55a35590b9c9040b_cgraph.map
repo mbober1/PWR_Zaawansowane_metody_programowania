@@ -1,0 +1,11 @@
+<map id="Interp4Set::ExecCmd" name="Interp4Set::ExecCmd">
+<area shape="rect" id="node1" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="5,183,163,209"/>
+<area shape="rect" id="node2" href="$classMobileObj.html#a9f4122afa6ce32282e33757fb88f1116" title="Udostępnia współrzędne położenia obiektu w trybie tylko do odczytu." alt="" coords="221,5,412,32"/>
+<area shape="rect" id="node3" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny." alt="" coords="218,56,415,83"/>
+<area shape="rect" id="node4" href="$classAccessControl.html#a69f4526ff524e6b37b530f97d0419706" title="Zaznaczenie, że zmiana nastąpiła." alt="" coords="215,107,419,133"/>
+<area shape="rect" id="node5" href="$classMobileObj.html#ad06c4b0a90be9fcc10c115d46dc288e5" title="Zmienia wartość kąta pitch." alt="" coords="211,157,423,184"/>
+<area shape="rect" id="node6" href="$classMobileObj.html#a7a496924b3ee3576b4791436546c0728" title="Zmienia wartość kąta roll." alt="" coords="214,208,419,235"/>
+<area shape="rect" id="node7" href="$classMobileObj.html#a8c9ce017216192d2a9de9553364f80fd" title="Zmienia wartość kąta yaw." alt="" coords="214,259,419,285"/>
+<area shape="rect" id="node8" href="$classMobileObj.html#a1bebe1bd87b363c1f87d708f9549eaf3" title="Zmienia współrzędne położenia obiektu." alt="" coords="222,309,411,336"/>
+<area shape="rect" id="node9" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny." alt="" coords="211,360,423,387"/>
+</map>

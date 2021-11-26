@@ -81,11 +81,6 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
       exit(1);
  }
 
- /*
-  *  Tutaj pobierane sa nazwy pierwszego i drugiego atrybuty.
-  *  Sprawdzamy, czy na pewno jest to Name i Value.
-  */
-
  char* sName_Name = xercesc::XMLString::transcode(rAttrs.getQName(0));
  char* sName_Shift = xercesc::XMLString::transcode(rAttrs.getQName(1));
  char* sName_Scale = xercesc::XMLString::transcode(rAttrs.getQName(2));
@@ -286,11 +281,6 @@ void XMLInterp4Config::fatalError(const xercesc::SAXParseException&  rException)
 void XMLInterp4Config::error(const xercesc::SAXParseException&  rException)
 {
   cerr << "Blad ..." << endl;
-
-  /*
-   * Tutaj należy wstawić odpowiedni kod. Tekst wyświetlany powyżej
-   * jest tylko "atrapą".
-   */
 }
 
 
@@ -303,11 +293,6 @@ void XMLInterp4Config::error(const xercesc::SAXParseException&  rException)
 void XMLInterp4Config::warning(const xercesc::SAXParseException&  rException)  
 {
   cerr << "Ostrzezenie ..." << endl;
-
-  /*
-   * Tutaj należy wstawić odpowiedni kod. Tekst wyświetlany powyżej
-   * jest tylko "atrapą".
-   */
 }
 
 

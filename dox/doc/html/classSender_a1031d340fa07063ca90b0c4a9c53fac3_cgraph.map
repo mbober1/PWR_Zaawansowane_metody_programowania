@@ -1,0 +1,12 @@
+<map id="Sender::Sender" name="Sender::Sender">
+<area shape="rect" id="node1" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="5,157,125,184"/>
+<area shape="rect" id="node2" href="$sender_8cpp.html#acb730f2935c51dc85cbf442b0de5d065" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="173,157,345,184"/>
+<area shape="rect" id="node3" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="393,150,560,191"/>
+<area shape="rect" id="node4" href="$classAccessControl.html#ac05a143ff477cee359603872b7642943" title="Skasowanie informacji, że zmiana nastąpiła." alt="" coords="619,5,833,32"/>
+<area shape="rect" id="node5" href="$classScene.html#adacca0ca27a40075e2c58cfddaccb7fe" title="Zwraca wskaźniki wszystkich obiektów na scenie." alt="" coords="638,56,814,83"/>
+<area shape="rect" id="node6" href="$classAccessControl.html#a687d41c24cb496f070915eb7c813f08f" title="Dostęp do informacji o zmianie." alt="" coords="631,107,821,133"/>
+<area shape="rect" id="node7" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny." alt="" coords="627,157,825,184"/>
+<area shape="rect" id="node8" href="$classSender.html#a882da01dcec44b27de1f66d15ef4c17c" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="673,208,779,235"/>
+<area shape="rect" id="node9" href="$classSender.html#a3dd228566d864f234a2a56650c8d7c4e" title="Sprawdza, czy pętla wątku może być wykonywana." alt="" coords="608,259,844,285"/>
+<area shape="rect" id="node10" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny." alt="" coords="620,309,832,336"/>
+</map>

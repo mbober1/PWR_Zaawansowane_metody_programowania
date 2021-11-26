@@ -1,0 +1,10 @@
+<map id="AccessControl::UnlockAccess" name="AccessControl::UnlockAccess">
+<area shape="rect" id="node1" title="Otwiera dostęp do całej sceny." alt="" coords="620,107,832,133"/>
+<area shape="rect" id="node2" href="$classInterp4Move.html#ac4365c2fa39f3b5c95495862677610ef" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="397,5,569,32"/>
+<area shape="rect" id="node3" href="$classInterp4Pause.html#ac307ceecfdee32c34d3363f19bc6d7a9" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="395,56,570,83"/>
+<area shape="rect" id="node4" href="$classInterp4Rotate.html#aaf7ec6456f0f1dfb475f82bb2fa361c3" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="393,107,572,133"/>
+<area shape="rect" id="node5" href="$classInterp4Set.html#a71680137e9147fbc55a35590b9c9040b" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="404,157,561,184"/>
+<area shape="rect" id="node6" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="399,209,566,250"/>
+<area shape="rect" id="node7" href="$sender_8cpp.html#acb730f2935c51dc85cbf442b0de5d065" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="173,216,345,243"/>
+<area shape="rect" id="node8" href="$classSender.html#a1031d340fa07063ca90b0c4a9c53fac3" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="5,216,125,243"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Interp4Pause::PrintCmd" name="Interp4Pause::PrintCmd">
+<area shape="rect" id="node1" title="Wyświetla postać bieżącego polecenia (nazwę oraz wartości parametrów)" alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$classInterp4Pause.html#a2c2cff88acbf4b30147d60f47f181494" title="Wyświetla nazwę polecenia." alt="" coords="228,5,435,32"/>
+<area shape="rect" id="node3" href="$Interp4Pause_8cpp.html#af1d7c0c3d3bc94fc9153958b0cbfb3cd" title=" " alt="" coords="483,5,597,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="AccessControl" name="AccessControl">
+<area shape="rect" id="node1" title="Przechowuje informacje o zmianie." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node2" href="$classScene.html" title="Interfejs do zarządzania obiektami na scenie." alt="" coords="32,80,93,107"/>
+</map>

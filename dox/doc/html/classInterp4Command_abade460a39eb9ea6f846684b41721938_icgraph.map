@@ -1,0 +1,5 @@
+<map id="Interp4Command::ExecCmd" name="Interp4Command::ExecCmd">
+<area shape="rect" id="node1" title="Wykonuje polecenie oraz wizualizuje jego realizację." alt="" coords="309,13,512,39"/>
+<area shape="rect" id="node2" href="$classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb" title="Uruchomienie wykonywania głównej pętli programu." alt="" coords="108,5,261,47"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,60,39"/>
+</map>

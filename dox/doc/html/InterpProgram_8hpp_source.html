@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy InterpProgram.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter<span id="projectnumber">&#160;0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.2 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('InterpProgram_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">InterpProgram.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="InterpProgram_8hpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;sstream&gt;</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Set4LibInterf_8hpp.html">Set4LibInterf.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Scene_8hpp.html">Scene.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="sender_8hpp.html">sender.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="InterpProgram_8hpp.html#aba889888734a8b272a51d444d70ad2fa">    7</a></span><span class="preprocessor">#define LINE_SIZE 500</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classInterpProgram.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classInterpProgram.html">InterpProgram</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">   18</a></span>  <a class="code hl_class" href="classScene.html">Scene</a> *<a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">   19</a></span>  <a class="code hl_class" href="classSender.html">Sender</a> *<a class="code hl_variable" href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">client</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7">exec_preprocesor</a>(<span class="keyword">const</span> std::string &amp;name, std::istringstream &amp;stream);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d">init_objects</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <a class="code hl_function" href="classInterpProgram.html#a7292b78f6c8a9d7d0e208d0cf670747a">InterpProgram</a>(<a class="code hl_typedef" href="Scene_8hpp.html#a7faafa32cbd7efdb788e58398c794922">Set_MobileObjs</a> &amp;obj_list);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_function" href="classInterpProgram.html#aace3546a5fd5ade4969da2fd1d4fb426">~InterpProgram</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb">exec_program</a>(<span class="keyword">const</span> std::string &amp;filename, <a class="code hl_class" href="classSet4LibInterf.html">Set4LibInterf</a> &amp;lib_set);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+<div class="ttc" id="aScene_8hpp_html"><div class="ttname"><a href="Scene_8hpp.html">Scene.hpp</a></div></div>
+<div class="ttc" id="aScene_8hpp_html_a7faafa32cbd7efdb788e58398c794922"><div class="ttname"><a href="Scene_8hpp.html#a7faafa32cbd7efdb788e58398c794922">Set_MobileObjs</a></div><div class="ttdeci">std::map&lt; std::string, std::shared_ptr&lt; MobileObj &gt; &gt; Set_MobileObjs</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00009">Scene.hpp:9</a></div></div>
+<div class="ttc" id="aSet4LibInterf_8hpp_html"><div class="ttname"><a href="Set4LibInterf_8hpp.html">Set4LibInterf.hpp</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html"><div class="ttname"><a href="classInterpProgram.html">InterpProgram</a></div><div class="ttdoc">Przechowuje informacje o scenie i połączeniu.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8hpp_source.html#l00015">InterpProgram.hpp:16</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_a22e9a449e2e64edf1b4ca4bf634250df"><div class="ttname"><a href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">InterpProgram::scene</a></div><div class="ttdeci">Scene * scene</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8hpp_source.html#l00018">InterpProgram.hpp:18</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_a4c7dd9eaab59c020afcfbd5844a7ade7"><div class="ttname"><a href="classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7">InterpProgram::exec_preprocesor</a></div><div class="ttdeci">bool exec_preprocesor(const std::string &amp;name, std::istringstream &amp;stream)</div><div class="ttdoc">Uruchomienie preprocesora.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00118">InterpProgram.cpp:118</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_a7292b78f6c8a9d7d0e208d0cf670747a"><div class="ttname"><a href="classInterpProgram.html#a7292b78f6c8a9d7d0e208d0cf670747a">InterpProgram::InterpProgram</a></div><div class="ttdeci">InterpProgram(Set_MobileObjs &amp;obj_list)</div><div class="ttdoc">Inicjalizuje obiekt listą obiektów mobilnych.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00007">InterpProgram.cpp:7</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_a7ca3641de1f0440e00bece6f5eceaa0d"><div class="ttname"><a href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">InterpProgram::client</a></div><div class="ttdeci">Sender * client</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8hpp_source.html#l00019">InterpProgram.hpp:19</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_aa7cb5496be865ca587358bd4b17489bb"><div class="ttname"><a href="classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb">InterpProgram::exec_program</a></div><div class="ttdeci">bool exec_program(const std::string &amp;filename, Set4LibInterf &amp;lib_set)</div><div class="ttdoc">Uruchomienie wykonywania głównej pętli programu.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00034">InterpProgram.cpp:34</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_aace3546a5fd5ade4969da2fd1d4fb426"><div class="ttname"><a href="classInterpProgram.html#aace3546a5fd5ade4969da2fd1d4fb426">InterpProgram::~InterpProgram</a></div><div class="ttdeci">~InterpProgram()</div><div class="ttdoc">Deinicjalizuje obiekt.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00016">InterpProgram.cpp:16</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_ad48bb5b393999b6610896ee61a37241d"><div class="ttname"><a href="classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d">InterpProgram::init_objects</a></div><div class="ttdeci">void init_objects()</div><div class="ttdoc">Inicjalizuje obiekty na scenie.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00145">InterpProgram.cpp:145</a></div></div>
+<div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">Interfejs do zarządzania obiektami na scenie.</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00019">Scene.hpp:20</a></div></div>
+<div class="ttc" id="aclassSender_html"><div class="ttname"><a href="classSender.html">Sender</a></div><div class="ttdoc">Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny.</div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00015">sender.hpp:16</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html"><div class="ttname"><a href="classSet4LibInterf.html">Set4LibInterf</a></div><div class="ttdoc">Przechowuje listę wtyczek i zarządza nią.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8hpp_source.html#l00014">Set4LibInterf.hpp:15</a></div></div>
+<div class="ttc" id="asender_8hpp_html"><div class="ttname"><a href="sender_8hpp.html">sender.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="InterpProgram_8hpp.html">InterpProgram.hpp</a></li>
+    <li class="footer">Wygenerowano Pt, 26 lis 2021 10:31:50 dla Interpreter programem <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

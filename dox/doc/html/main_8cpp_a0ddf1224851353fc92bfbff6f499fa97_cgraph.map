@@ -1,0 +1,16 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,213,60,239"/>
+<area shape="rect" id="node2" href="$classSet4LibInterf.html#a53f88851f4ede6db6bcc84c52f80a4be" title="Dodawanie biblioteki o podanej nazwie." alt="" coords="108,89,267,115"/>
+<area shape="rect" id="node3" href="$classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb" title="Uruchomienie wykonywania głównej pętli programu." alt="" coords="111,140,264,181"/>
+<area shape="rect" id="node12" href="$classConfiguration.html#a7e337d4780f80e2c53b04f1ecb6a051b" title="Pobierz listę nazw dostępnych bibliotek w postaci wektora." alt="" coords="118,205,257,247"/>
+<area shape="rect" id="node13" href="$classConfiguration.html#a2678d92fb5825fbc96d0bbc00608a402" title="Pobierz listę dostępnych bibliotek w postaci mapy." alt="" coords="118,271,257,312"/>
+<area shape="rect" id="node14" href="$xmlinterp_8cpp.html#a7a29effacfffcc3adad9f3d8f1cdc30e" title=" " alt="" coords="148,337,227,363"/>
+<area shape="rect" id="node4" href="$classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7" title="Uruchomienie preprocesora." alt="" coords="339,5,493,47"/>
+<area shape="rect" id="node5" href="$classInterp4Command.html#abade460a39eb9ea6f846684b41721938" title="Wykonuje polecenie oraz wizualizuje jego realizację." alt="" coords="315,71,517,98"/>
+<area shape="rect" id="node6" href="$classSet4LibInterf.html#aaaf1b7c2464b8561ec9963832cacff4a" title="Szuka biblioteki po nazwie." alt="" coords="348,122,484,149"/>
+<area shape="rect" id="node7" href="$classScene.html#a67e8a1cf1414ae7111f9457fa55b1522" title="Szuka obiektu na scenie po nazwie." alt="" coords="335,173,497,199"/>
+<area shape="rect" id="node8" href="$classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d" title="Inicjalizuje obiekty na scenie." alt="" coords="344,224,488,265"/>
+<area shape="rect" id="node11" href="$classSender.html#a19babadc551ca7e6b5b5a9e241481806" title=" " alt="" coords="323,290,509,317"/>
+<area shape="rect" id="node9" href="$classScene.html#adacca0ca27a40075e2c58cfddaccb7fe" title="Zwraca wskaźniki wszystkich obiektów na scenie." alt="" coords="565,231,741,258"/>
+<area shape="rect" id="node10" href="$classSender.html#a882da01dcec44b27de1f66d15ef4c17c" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="600,286,707,313"/>
+</map>

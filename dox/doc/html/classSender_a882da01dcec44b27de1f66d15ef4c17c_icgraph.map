@@ -1,0 +1,11 @@
+<map id="Sender::send" name="Sender::send">
+<area shape="rect" id="node1" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="627,101,733,127"/>
+<area shape="rect" id="node2" href="$classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d" title="Inicjalizuje obiekty na scenie." alt="" coords="414,5,558,47"/>
+<area shape="rect" id="node5" href="$classSender.html#a19babadc551ca7e6b5b5a9e241481806" title=" " alt="" coords="393,71,579,98"/>
+<area shape="rect" id="node6" href="$classSender.html#a100a3e1f1a1ab4c388391e5b5a6de9f8" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="403,123,569,164"/>
+<area shape="rect" id="node9" href="$classSender.html#a99dd9c6aa7d546320d619aca9067fdc6" title="Deinicjalizuje obiekt, zamyka bezpiecznie połączenie oraz gniazdo." alt="" coords="421,189,551,215"/>
+<area shape="rect" id="node3" href="$classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb" title="Uruchomienie wykonywania głównej pętli programu." alt="" coords="183,35,336,76"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="38,42,93,69"/>
+<area shape="rect" id="node7" href="$sender_8cpp.html#acb730f2935c51dc85cbf442b0de5d065" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="173,130,345,157"/>
+<area shape="rect" id="node8" href="$classSender.html#a1031d340fa07063ca90b0c4a9c53fac3" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="5,130,125,157"/>
+</map>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy Set4LibInterf.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter<span id="projectnumber">&#160;0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.2 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Set4LibInterf_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">Set4LibInterf.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Set4LibInterf_8hpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="LibInterf_8hpp.html">LibInterf.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="Set4LibInterf_8hpp.html#a86647228f37a3ade9d5fdc3d63ef87c9">    6</a></span><span class="keyword">typedef</span> std::map&lt;std::string, std::shared_ptr&lt;LibInterf&gt;&gt; <a class="code hl_typedef" href="Set4LibInterf_8hpp.html#a86647228f37a3ade9d5fdc3d63ef87c9">LibInterfMap</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classSet4LibInterf.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classSet4LibInterf.html">Set4LibInterf</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classSet4LibInterf.html#a6fb2f328d14b1470ef73ace726072906">   17</a></span>    <a class="code hl_typedef" href="Set4LibInterf_8hpp.html#a86647228f37a3ade9d5fdc3d63ef87c9">LibInterfMap</a> <a class="code hl_variable" href="classSet4LibInterf.html#a6fb2f328d14b1470ef73ace726072906">lib_map</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="classSet4LibInterf.html#a2b63e3d21727c70c2c35ffb319e59b31">Set4LibInterf</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="classSet4LibInterf.html#ab0ff67f51d7741578597bd04c2176aa2">~Set4LibInterf</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSet4LibInterf.html#a53f88851f4ede6db6bcc84c52f80a4be">add_lib</a>(std::string path);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    LibInterfMap::iterator <a class="code hl_function" href="classSet4LibInterf.html#a26c7123440c5812b58c930b497afca55">not_exist</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    std::shared_ptr&lt;LibInterf&gt; <a class="code hl_function" href="classSet4LibInterf.html#aaaf1b7c2464b8561ec9963832cacff4a">find</a>(std::string name);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+<div class="ttc" id="aLibInterf_8hpp_html"><div class="ttname"><a href="LibInterf_8hpp.html">LibInterf.hpp</a></div></div>
+<div class="ttc" id="aSet4LibInterf_8hpp_html_a86647228f37a3ade9d5fdc3d63ef87c9"><div class="ttname"><a href="Set4LibInterf_8hpp.html#a86647228f37a3ade9d5fdc3d63ef87c9">LibInterfMap</a></div><div class="ttdeci">std::map&lt; std::string, std::shared_ptr&lt; LibInterf &gt; &gt; LibInterfMap</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8hpp_source.html#l00006">Set4LibInterf.hpp:6</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html"><div class="ttname"><a href="classSet4LibInterf.html">Set4LibInterf</a></div><div class="ttdoc">Przechowuje listę wtyczek i zarządza nią.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8hpp_source.html#l00014">Set4LibInterf.hpp:15</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_a26c7123440c5812b58c930b497afca55"><div class="ttname"><a href="classSet4LibInterf.html#a26c7123440c5812b58c930b497afca55">Set4LibInterf::not_exist</a></div><div class="ttdeci">LibInterfMap::iterator not_exist()</div><div class="ttdoc">Zwraca koniec mapy.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8cpp_source.html#l00028">Set4LibInterf.cpp:28</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_a2b63e3d21727c70c2c35ffb319e59b31"><div class="ttname"><a href="classSet4LibInterf.html#a2b63e3d21727c70c2c35ffb319e59b31">Set4LibInterf::Set4LibInterf</a></div><div class="ttdeci">Set4LibInterf()</div><div class="ttdoc">Konstruktor Set4LibInterf.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8cpp_source.html#l00006">Set4LibInterf.cpp:6</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_a53f88851f4ede6db6bcc84c52f80a4be"><div class="ttname"><a href="classSet4LibInterf.html#a53f88851f4ede6db6bcc84c52f80a4be">Set4LibInterf::add_lib</a></div><div class="ttdeci">void add_lib(std::string path)</div><div class="ttdoc">Dodawanie biblioteki o podanej nazwie.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8cpp_source.html#l00018">Set4LibInterf.cpp:18</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_a6fb2f328d14b1470ef73ace726072906"><div class="ttname"><a href="classSet4LibInterf.html#a6fb2f328d14b1470ef73ace726072906">Set4LibInterf::lib_map</a></div><div class="ttdeci">LibInterfMap lib_map</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8hpp_source.html#l00017">Set4LibInterf.hpp:17</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_aaaf1b7c2464b8561ec9963832cacff4a"><div class="ttname"><a href="classSet4LibInterf.html#aaaf1b7c2464b8561ec9963832cacff4a">Set4LibInterf::find</a></div><div class="ttdeci">std::shared_ptr&lt; LibInterf &gt; find(std::string name)</div><div class="ttdoc">Szuka biblioteki po nazwie.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8cpp_source.html#l00038">Set4LibInterf.cpp:38</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_ab0ff67f51d7741578597bd04c2176aa2"><div class="ttname"><a href="classSet4LibInterf.html#ab0ff67f51d7741578597bd04c2176aa2">Set4LibInterf::~Set4LibInterf</a></div><div class="ttdeci">~Set4LibInterf()</div><div class="ttdoc">Destruktor Set4LibInterf.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8cpp_source.html#l00012">Set4LibInterf.cpp:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="Set4LibInterf_8hpp.html">Set4LibInterf.hpp</a></li>
+    <li class="footer">Wygenerowano Pt, 26 lis 2021 10:31:50 dla Interpreter programem <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

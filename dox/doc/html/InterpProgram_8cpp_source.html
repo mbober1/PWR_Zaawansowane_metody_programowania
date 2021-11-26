@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy InterpProgram.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter<span id="projectnumber">&#160;0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.2 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('InterpProgram_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">InterpProgram.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="InterpProgram_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="InterpProgram_8hpp.html">InterpProgram.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="Set4LibInterf_8hpp.html">Set4LibInterf.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classInterpProgram.html#a7292b78f6c8a9d7d0e208d0cf670747a">    7</a></span><a class="code hl_function" href="classInterpProgram.html#a7292b78f6c8a9d7d0e208d0cf670747a">InterpProgram::InterpProgram</a>(<a class="code hl_typedef" href="Scene_8hpp.html#a7faafa32cbd7efdb788e58398c794922">Set_MobileObjs</a> &amp;obj_list)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a> = <span class="keyword">new</span> <a class="code hl_class" href="classScene.html">Scene</a>(obj_list);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classInterpProgram.html#aace3546a5fd5ade4969da2fd1d4fb426">   16</a></span><a class="code hl_function" href="classInterpProgram.html#aace3546a5fd5ade4969da2fd1d4fb426">InterpProgram::~InterpProgram</a>() </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">client</a>)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">delete</span> this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">client</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">delete</span> this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb">   34</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb">InterpProgram::exec_program</a>(<span class="keyword">const</span> std::string &amp;filename, <a class="code hl_class" href="classSet4LibInterf.html">Set4LibInterf</a> &amp;lib_set)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  std::istringstream iss;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  this-&gt;<a class="code hl_function" href="classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7">exec_preprocesor</a>(filename, iss);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  std::string cmd_name;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  std::string object_name;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">client</a> = <span class="keyword">new</span> <a class="code hl_class" href="classSender.html">Sender</a>(this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordflow">if</span> (<span class="keyword">false</span> == this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">client</a>-&gt;<a class="code hl_function" href="classSender.html#a19babadc551ca7e6b5b5a9e241481806">open_connection</a>())</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::cerr &lt;&lt; <span class="stringliteral">&quot;Nie można otworzyć połączenia!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  this-&gt;<a class="code hl_function" href="classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d">init_objects</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">while</span> (iss &gt;&gt; cmd_name)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::vector&lt;std::thread*&gt; threads_list;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">while</span> (!(cmd_name == <span class="stringliteral">&quot;Begin_Parallel_Actions&quot;</span>))</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      iss &gt;&gt; cmd_name;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">while</span> (!(cmd_name == <span class="stringliteral">&quot;End_Parallel_Actions&quot;</span>))</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      iss &gt;&gt; cmd_name;    <span class="comment">// wczytaj wykonywaną komendę</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      <span class="keywordflow">if</span> (cmd_name == <span class="stringliteral">&quot;End_Parallel_Actions&quot;</span>)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      iss &gt;&gt; object_name; <span class="comment">// wczytaj nazwę obiektu</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keyword">auto</span> library = lib_set.<a class="code hl_function" href="classSet4LibInterf.html#aaaf1b7c2464b8561ec9963832cacff4a">find</a>(cmd_name); <span class="comment">// wyszukaj plugin</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == library)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Nie znaleziono komendy: &quot;</span> &lt;&lt; cmd_name &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="keyword">auto</span> cmd = library-&gt;create_cmd(); <span class="comment">// utwórz interpreter</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">if</span>(<span class="keyword">false</span> == cmd-&gt;ReadParams(iss)) <span class="comment">// wczytaj parametry</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Błąd czytania parametrów&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">delete</span> cmd;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keyword">auto</span> <span class="keywordtype">object</span> = <a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a>-&gt;<a class="code hl_function" href="classScene.html#a67e8a1cf1414ae7111f9457fa55b1522">FindMobileObj</a>(object_name); <span class="comment">// znajdź obiekt</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> == <span class="keywordtype">object</span>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Nie można znaleźć obiektu o nazwie: &quot;</span> &lt;&lt; object_name &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keyword">delete</span> cmd;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      std::thread* new_thread = <span class="keyword">new</span> std::thread(&amp;<a class="code hl_function" href="classInterp4Command.html#abade460a39eb9ea6f846684b41721938">Interp4Command::ExecCmd</a>, cmd, <span class="keywordtype">object</span>.get(), <a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>      threads_list.push_back(new_thread);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> thread_object : threads_list) <span class="comment">// czekaj na zakończenie wszystkich zadań</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      thread_object-&gt;join();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="keyword">delete</span> thread_object;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7">  118</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7">InterpProgram::exec_preprocesor</a>(<span class="keyword">const</span> std::string &amp;name, std::istringstream &amp;stream)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>{</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  std::string cmd = <span class="stringliteral">&quot;cpp -P &quot;</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">char</span> buffer[<a class="code hl_define" href="InterpProgram_8hpp.html#aba889888734a8b272a51d444d70ad2fa">LINE_SIZE</a>];</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  std::ostringstream output;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  FILE* pipe = popen((cmd + name).c_str(), <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordflow">if</span> (<span class="keyword">nullptr</span> != pipe)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">while</span> (fgets(buffer, <a class="code hl_define" href="InterpProgram_8hpp.html#aba889888734a8b272a51d444d70ad2fa">LINE_SIZE</a>, pipe))</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      output &lt;&lt; buffer;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    stream.str(output.str());</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    result = (pclose(pipe) == 0);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d">  145</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d">InterpProgram::init_objects</a>()</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keyword">auto</span> objects_list = this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">scene</a>-&gt;<a class="code hl_function" href="classScene.html#adacca0ca27a40075e2c58cfddaccb7fe">get_objects_ptrs</a>();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> object_ptr : objects_list)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">auto</span> <span class="keywordtype">object</span> = object_ptr.get();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    std::string message = <span class="stringliteral">&quot;AddObj&quot;</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    message += <span class="keywordtype">object</span>-&gt;GetStateDesc();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    this-&gt;<a class="code hl_variable" href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">client</a>-&gt;<a class="code hl_function" href="classSender.html#a882da01dcec44b27de1f66d15ef4c17c">send</a>(message.c_str());</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+<div class="ttc" id="aInterpProgram_8hpp_html"><div class="ttname"><a href="InterpProgram_8hpp.html">InterpProgram.hpp</a></div></div>
+<div class="ttc" id="aInterpProgram_8hpp_html_aba889888734a8b272a51d444d70ad2fa"><div class="ttname"><a href="InterpProgram_8hpp.html#aba889888734a8b272a51d444d70ad2fa">LINE_SIZE</a></div><div class="ttdeci">#define LINE_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8hpp_source.html#l00007">InterpProgram.hpp:7</a></div></div>
+<div class="ttc" id="aScene_8hpp_html_a7faafa32cbd7efdb788e58398c794922"><div class="ttname"><a href="Scene_8hpp.html#a7faafa32cbd7efdb788e58398c794922">Set_MobileObjs</a></div><div class="ttdeci">std::map&lt; std::string, std::shared_ptr&lt; MobileObj &gt; &gt; Set_MobileObjs</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00009">Scene.hpp:9</a></div></div>
+<div class="ttc" id="aSet4LibInterf_8hpp_html"><div class="ttname"><a href="Set4LibInterf_8hpp.html">Set4LibInterf.hpp</a></div></div>
+<div class="ttc" id="aclassInterp4Command_html_abade460a39eb9ea6f846684b41721938"><div class="ttname"><a href="classInterp4Command.html#abade460a39eb9ea6f846684b41721938">Interp4Command::ExecCmd</a></div><div class="ttdeci">virtual bool ExecCmd(MobileObj *pMobObj, AccessControl *pAccCtrl) const =0</div><div class="ttdoc">Wykonuje polecenie oraz wizualizuje jego realizację.</div></div>
+<div class="ttc" id="aclassInterpProgram_html_a22e9a449e2e64edf1b4ca4bf634250df"><div class="ttname"><a href="classInterpProgram.html#a22e9a449e2e64edf1b4ca4bf634250df">InterpProgram::scene</a></div><div class="ttdeci">Scene * scene</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8hpp_source.html#l00018">InterpProgram.hpp:18</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_a4c7dd9eaab59c020afcfbd5844a7ade7"><div class="ttname"><a href="classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7">InterpProgram::exec_preprocesor</a></div><div class="ttdeci">bool exec_preprocesor(const std::string &amp;name, std::istringstream &amp;stream)</div><div class="ttdoc">Uruchomienie preprocesora.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00118">InterpProgram.cpp:118</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_a7292b78f6c8a9d7d0e208d0cf670747a"><div class="ttname"><a href="classInterpProgram.html#a7292b78f6c8a9d7d0e208d0cf670747a">InterpProgram::InterpProgram</a></div><div class="ttdeci">InterpProgram(Set_MobileObjs &amp;obj_list)</div><div class="ttdoc">Inicjalizuje obiekt listą obiektów mobilnych.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00007">InterpProgram.cpp:7</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_a7ca3641de1f0440e00bece6f5eceaa0d"><div class="ttname"><a href="classInterpProgram.html#a7ca3641de1f0440e00bece6f5eceaa0d">InterpProgram::client</a></div><div class="ttdeci">Sender * client</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8hpp_source.html#l00019">InterpProgram.hpp:19</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_aa7cb5496be865ca587358bd4b17489bb"><div class="ttname"><a href="classInterpProgram.html#aa7cb5496be865ca587358bd4b17489bb">InterpProgram::exec_program</a></div><div class="ttdeci">bool exec_program(const std::string &amp;filename, Set4LibInterf &amp;lib_set)</div><div class="ttdoc">Uruchomienie wykonywania głównej pętli programu.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00034">InterpProgram.cpp:34</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_aace3546a5fd5ade4969da2fd1d4fb426"><div class="ttname"><a href="classInterpProgram.html#aace3546a5fd5ade4969da2fd1d4fb426">InterpProgram::~InterpProgram</a></div><div class="ttdeci">~InterpProgram()</div><div class="ttdoc">Deinicjalizuje obiekt.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00016">InterpProgram.cpp:16</a></div></div>
+<div class="ttc" id="aclassInterpProgram_html_ad48bb5b393999b6610896ee61a37241d"><div class="ttname"><a href="classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d">InterpProgram::init_objects</a></div><div class="ttdeci">void init_objects()</div><div class="ttdoc">Inicjalizuje obiekty na scenie.</div><div class="ttdef"><b>Definition:</b> <a href="InterpProgram_8cpp_source.html#l00145">InterpProgram.cpp:145</a></div></div>
+<div class="ttc" id="aclassScene_html"><div class="ttname"><a href="classScene.html">Scene</a></div><div class="ttdoc">Interfejs do zarządzania obiektami na scenie.</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00019">Scene.hpp:20</a></div></div>
+<div class="ttc" id="aclassScene_html_a67e8a1cf1414ae7111f9457fa55b1522"><div class="ttname"><a href="classScene.html#a67e8a1cf1414ae7111f9457fa55b1522">Scene::FindMobileObj</a></div><div class="ttdeci">Object_ptr FindMobileObj(std::string name)</div><div class="ttdoc">Szuka obiektu na scenie po nazwie.</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8cpp_source.html#l00033">Scene.cpp:33</a></div></div>
+<div class="ttc" id="aclassScene_html_adacca0ca27a40075e2c58cfddaccb7fe"><div class="ttname"><a href="classScene.html#adacca0ca27a40075e2c58cfddaccb7fe">Scene::get_objects_ptrs</a></div><div class="ttdeci">std::vector&lt; Object_ptr &gt; get_objects_ptrs()</div><div class="ttdoc">Zwraca wskaźniki wszystkich obiektów na scenie.</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8cpp_source.html#l00080">Scene.cpp:80</a></div></div>
+<div class="ttc" id="aclassSender_html"><div class="ttname"><a href="classSender.html">Sender</a></div><div class="ttdoc">Modeluje nadajnik poleceń odzwierciedlających aktualny stan sceny.</div><div class="ttdef"><b>Definition:</b> <a href="sender_8hpp_source.html#l00015">sender.hpp:16</a></div></div>
+<div class="ttc" id="aclassSender_html_a19babadc551ca7e6b5b5a9e241481806"><div class="ttname"><a href="classSender.html#a19babadc551ca7e6b5b5a9e241481806">Sender::open_connection</a></div><div class="ttdeci">bool open_connection()</div><div class="ttdef"><b>Definition:</b> <a href="sender_8cpp_source.html#l00153">sender.cpp:153</a></div></div>
+<div class="ttc" id="aclassSender_html_a882da01dcec44b27de1f66d15ef4c17c"><div class="ttname"><a href="classSender.html#a882da01dcec44b27de1f66d15ef4c17c">Sender::send</a></div><div class="ttdeci">int send(const char *message)</div><div class="ttdoc">Wysyła napis do poprzez gniazdo sieciowe.</div><div class="ttdef"><b>Definition:</b> <a href="sender_8cpp_source.html#l00123">sender.cpp:123</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html"><div class="ttname"><a href="classSet4LibInterf.html">Set4LibInterf</a></div><div class="ttdoc">Przechowuje listę wtyczek i zarządza nią.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8hpp_source.html#l00014">Set4LibInterf.hpp:15</a></div></div>
+<div class="ttc" id="aclassSet4LibInterf_html_aaaf1b7c2464b8561ec9963832cacff4a"><div class="ttname"><a href="classSet4LibInterf.html#aaaf1b7c2464b8561ec9963832cacff4a">Set4LibInterf::find</a></div><div class="ttdeci">std::shared_ptr&lt; LibInterf &gt; find(std::string name)</div><div class="ttdoc">Szuka biblioteki po nazwie.</div><div class="ttdef"><b>Definition:</b> <a href="Set4LibInterf_8cpp_source.html#l00038">Set4LibInterf.cpp:38</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="InterpProgram_8cpp.html">InterpProgram.cpp</a></li>
+    <li class="footer">Wygenerowano Pt, 26 lis 2021 10:31:50 dla Interpreter programem <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

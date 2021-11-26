@@ -1,0 +1,5 @@
+<map id="Sender::~Sender" name="Sender::~Sender">
+<area shape="rect" id="node1" title="Deinicjalizuje obiekt, zamyka bezpiecznie połączenie oraz gniazdo." alt="" coords="5,31,136,57"/>
+<area shape="rect" id="node2" href="$classSender.html#a96412f54520d550dd1ea3e9b3bb29786" title="Powoduje przerwanie działania pętli wątku." alt="" coords="184,5,420,32"/>
+<area shape="rect" id="node3" href="$classSender.html#a882da01dcec44b27de1f66d15ef4c17c" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="249,56,355,83"/>
+</map>

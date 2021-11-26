@@ -1,0 +1,11 @@
+<map id="InterpProgram::exec_program" name="InterpProgram::exec_program">
+<area shape="rect" id="node1" title="Uruchomienie wykonywania głównej pętli programu." alt="" coords="5,140,159,181"/>
+<area shape="rect" id="node2" href="$classInterpProgram.html#a4c7dd9eaab59c020afcfbd5844a7ade7" title="Uruchomienie preprocesora." alt="" coords="231,5,385,47"/>
+<area shape="rect" id="node3" href="$classInterp4Command.html#abade460a39eb9ea6f846684b41721938" title="Wykonuje polecenie oraz wizualizuje jego realizację." alt="" coords="207,71,409,98"/>
+<area shape="rect" id="node4" href="$classSet4LibInterf.html#aaaf1b7c2464b8561ec9963832cacff4a" title="Szuka biblioteki po nazwie." alt="" coords="240,122,376,149"/>
+<area shape="rect" id="node5" href="$classScene.html#a67e8a1cf1414ae7111f9457fa55b1522" title="Szuka obiektu na scenie po nazwie." alt="" coords="227,173,389,199"/>
+<area shape="rect" id="node6" href="$classInterpProgram.html#ad48bb5b393999b6610896ee61a37241d" title="Inicjalizuje obiekty na scenie." alt="" coords="236,224,380,265"/>
+<area shape="rect" id="node9" href="$classSender.html#a19babadc551ca7e6b5b5a9e241481806" title=" " alt="" coords="215,290,401,317"/>
+<area shape="rect" id="node7" href="$classScene.html#adacca0ca27a40075e2c58cfddaccb7fe" title="Zwraca wskaźniki wszystkich obiektów na scenie." alt="" coords="457,231,633,258"/>
+<area shape="rect" id="node8" href="$classSender.html#a882da01dcec44b27de1f66d15ef4c17c" title="Wysyła napis do poprzez gniazdo sieciowe." alt="" coords="492,286,599,313"/>
+</map>

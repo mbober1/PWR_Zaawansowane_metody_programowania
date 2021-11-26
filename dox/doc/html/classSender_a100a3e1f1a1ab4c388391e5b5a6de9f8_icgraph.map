@@ -1,0 +1,5 @@
+<map id="Sender::Watching_and_Sending" name="Sender::Watching_and_Sending">
+<area shape="rect" id="node1" title="Ta metoda jest de facto treścią wątku komunikacyjnego." alt="" coords="393,5,560,47"/>
+<area shape="rect" id="node2" href="$sender_8cpp.html#acb730f2935c51dc85cbf442b0de5d065" title="Funkcja jest treścią wątku komunikacyjnego." alt="" coords="173,13,345,39"/>
+<area shape="rect" id="node3" href="$classSender.html#a1031d340fa07063ca90b0c4a9c53fac3" title="Inicjalizuje obiekt deskryptorem gniazda i wskaźnikiem na scenę, na zmianę stanu które będzie ten obi..." alt="" coords="5,13,125,39"/>
+</map>

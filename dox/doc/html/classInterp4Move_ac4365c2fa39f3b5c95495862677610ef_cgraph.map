@@ -1,0 +1,9 @@
+<map id="Interp4Move::ExecCmd" name="Interp4Move::ExecCmd">
+<area shape="rect" id="node1" title="Wykonuje polecenie oraz wizualizuje jego realizację" alt="" coords="5,132,177,159"/>
+<area shape="rect" id="node2" href="$classMobileObj.html#a8f2c805c7522d2b0cde36327c82ff64a" title="Udostępia wartość kąta roll." alt="" coords="228,5,435,32"/>
+<area shape="rect" id="node3" href="$classMobileObj.html#a9f4122afa6ce32282e33757fb88f1116" title="Udostępnia współrzędne położenia obiektu w trybie tylko do odczytu." alt="" coords="236,56,427,83"/>
+<area shape="rect" id="node4" href="$classAccessControl.html#abd4921dc14c3568563c2ae35f4b43c29" title="Zamyka dostęp całej sceny." alt="" coords="233,107,430,133"/>
+<area shape="rect" id="node5" href="$classAccessControl.html#a69f4526ff524e6b37b530f97d0419706" title="Zaznaczenie, że zmiana nastąpiła." alt="" coords="229,157,433,184"/>
+<area shape="rect" id="node6" href="$classMobileObj.html#a1bebe1bd87b363c1f87d708f9549eaf3" title="Zmienia współrzędne położenia obiektu." alt="" coords="237,208,426,235"/>
+<area shape="rect" id="node7" href="$classAccessControl.html#aff3de9ca43882da925567c0057618cc5" title="Otwiera dostęp do całej sceny." alt="" coords="225,259,437,285"/>
+</map>

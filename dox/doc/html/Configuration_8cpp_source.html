@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Interpreter: Plik źródłowy Configuration.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Interpreter<span id="projectnumber">&#160;0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.2 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Configuration_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle"><div class="title">Configuration.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Configuration_8cpp.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Configuration_8hh.html">Configuration.hh</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classConfiguration.html#a6fc07a61b3332f07ed59660b19a93391">    6</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classConfiguration.html#a6fc07a61b3332f07ed59660b19a93391">Configuration::add_lib</a>(<span class="keyword">const</span> std::string &amp;lib_name) </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>  this-&gt;<a class="code hl_variable" href="classConfiguration.html#a1a7b0eae2ad3ca234c7c13706314c3c0">lib_list</a>.push_back(lib_name);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classConfiguration.html#a7e337d4780f80e2c53b04f1ecb6a051b">   16</a></span>std::vector&lt;std::string&gt; &amp; <a class="code hl_function" href="classConfiguration.html#a7e337d4780f80e2c53b04f1ecb6a051b">Configuration::get_lib_list</a>() </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classConfiguration.html#a1a7b0eae2ad3ca234c7c13706314c3c0">lib_list</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classConfiguration.html#a2678d92fb5825fbc96d0bbc00608a402">   26</a></span><a class="code hl_typedef" href="Scene_8hpp.html#a7faafa32cbd7efdb788e58398c794922">Set_MobileObjs</a> &amp; <a class="code hl_function" href="classConfiguration.html#a2678d92fb5825fbc96d0bbc00608a402">Configuration::get_obj_list</a>() </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordflow">return</span> this-&gt;<a class="code hl_variable" href="classConfiguration.html#aa88263ce6133dc069763f5e10f296bf6">obj_list</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classConfiguration.html#a1d9bae8b657f38614f50dab4b7109a57">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classConfiguration.html#a1d9bae8b657f38614f50dab4b7109a57">Configuration::add_mobile_obj</a>(<span class="keyword">const</span> std::string &amp;Name, <span class="keyword">const</span> <a class="code hl_class" href="classgeom_1_1Vector.html">Vector3D</a> &amp;Shift, <span class="keyword">const</span> <a class="code hl_class" href="classgeom_1_1Vector.html">Vector3D</a> &amp;Scale, <span class="keyword">const</span> <a class="code hl_class" href="classgeom_1_1Vector.html">Vector3D</a> &amp;Rot, <span class="keyword">const</span> <a class="code hl_class" href="classgeom_1_1Vector.html">Vector3D</a> &amp;Trans, <span class="keyword">const</span> std::string RGB) </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <a class="code hl_typedef" href="Scene_8hpp.html#ab6d7116c44f0df00a5aa7dc2e0b90775">Object_ptr</a> new_object = std::make_shared&lt;MobileObj&gt;();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  new_object-&gt;SetName(Name.c_str());</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  new_object-&gt;SetPosition_m(Trans);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  new_object-&gt;SetScale(Scale);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  new_object-&gt;SetShift(Shift);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  new_object-&gt;SetAng_Pitch_deg(Rot[0]);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  new_object-&gt;SetAng_Roll_deg(Rot[1]);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  new_object-&gt;SetAng_Yaw_deg(Rot[2]);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  new_object-&gt;SetColour(RGB);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  this-&gt;<a class="code hl_variable" href="classConfiguration.html#aa88263ce6133dc069763f5e10f296bf6">obj_list</a>.insert({Name, new_object});</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+<div class="ttc" id="aConfiguration_8hh_html"><div class="ttname"><a href="Configuration_8hh.html">Configuration.hh</a></div></div>
+<div class="ttc" id="aScene_8hpp_html_a7faafa32cbd7efdb788e58398c794922"><div class="ttname"><a href="Scene_8hpp.html#a7faafa32cbd7efdb788e58398c794922">Set_MobileObjs</a></div><div class="ttdeci">std::map&lt; std::string, std::shared_ptr&lt; MobileObj &gt; &gt; Set_MobileObjs</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00009">Scene.hpp:9</a></div></div>
+<div class="ttc" id="aScene_8hpp_html_ab6d7116c44f0df00a5aa7dc2e0b90775"><div class="ttname"><a href="Scene_8hpp.html#ab6d7116c44f0df00a5aa7dc2e0b90775">Object_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; MobileObj &gt; Object_ptr</div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00010">Scene.hpp:10</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_a1a7b0eae2ad3ca234c7c13706314c3c0"><div class="ttname"><a href="classConfiguration.html#a1a7b0eae2ad3ca234c7c13706314c3c0">Configuration::lib_list</a></div><div class="ttdeci">std::vector&lt; std::string &gt; lib_list</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00013">Configuration.hh:13</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_a1d9bae8b657f38614f50dab4b7109a57"><div class="ttname"><a href="classConfiguration.html#a1d9bae8b657f38614f50dab4b7109a57">Configuration::add_mobile_obj</a></div><div class="ttdeci">void add_mobile_obj(const std::string &amp;Name, const Vector3D &amp;Shift, const Vector3D &amp;Scale, const Vector3D &amp;Rot, const Vector3D &amp;Trans, const std::string RGB)</div><div class="ttdoc">Dodaj obiekt do listy.</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8cpp_source.html#l00035">Configuration.cpp:35</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_a2678d92fb5825fbc96d0bbc00608a402"><div class="ttname"><a href="classConfiguration.html#a2678d92fb5825fbc96d0bbc00608a402">Configuration::get_obj_list</a></div><div class="ttdeci">Set_MobileObjs &amp; get_obj_list()</div><div class="ttdoc">Pobierz listę dostępnych bibliotek w postaci mapy.</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8cpp_source.html#l00026">Configuration.cpp:26</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_a6fc07a61b3332f07ed59660b19a93391"><div class="ttname"><a href="classConfiguration.html#a6fc07a61b3332f07ed59660b19a93391">Configuration::add_lib</a></div><div class="ttdeci">void add_lib(const std::string &amp;lib_name)</div><div class="ttdoc">Dodaj bilbiotekę do listy.</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8cpp_source.html#l00006">Configuration.cpp:6</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_a7e337d4780f80e2c53b04f1ecb6a051b"><div class="ttname"><a href="classConfiguration.html#a7e337d4780f80e2c53b04f1ecb6a051b">Configuration::get_lib_list</a></div><div class="ttdeci">std::vector&lt; std::string &gt; &amp; get_lib_list()</div><div class="ttdoc">Pobierz listę nazw dostępnych bibliotek w postaci wektora.</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8cpp_source.html#l00016">Configuration.cpp:16</a></div></div>
+<div class="ttc" id="aclassConfiguration_html_aa88263ce6133dc069763f5e10f296bf6"><div class="ttname"><a href="classConfiguration.html#aa88263ce6133dc069763f5e10f296bf6">Configuration::obj_list</a></div><div class="ttdeci">Set_MobileObjs obj_list</div><div class="ttdef"><b>Definition:</b> <a href="Configuration_8hh_source.html#l00014">Configuration.hh:14</a></div></div>
+<div class="ttc" id="aclassgeom_1_1Vector_html"><div class="ttname"><a href="classgeom_1_1Vector.html">geom::Vector&lt; double, 3 &gt;</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Configuration_8cpp.html">Configuration.cpp</a></li>
+    <li class="footer">Wygenerowano Pt, 26 lis 2021 10:31:50 dla Interpreter programem <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

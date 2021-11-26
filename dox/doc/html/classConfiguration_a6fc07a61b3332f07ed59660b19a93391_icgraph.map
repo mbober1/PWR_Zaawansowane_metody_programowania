@@ -1,0 +1,6 @@
+<map id="Configuration::add_lib" name="Configuration::add_lib">
+<area shape="rect" id="node1" title="Dodaj bilbiotekę do listy." alt="" coords="787,13,951,39"/>
+<area shape="rect" id="node2" href="$classXMLInterp4Config.html#a18cd48f030387cdc1c52211856735f33" title="Analizuje atrybuty i odpwiednio je interpretuje." alt="" coords="544,5,739,47"/>
+<area shape="rect" id="node3" href="$classXMLInterp4Config.html#a5e3c76e68652f288d9bad7ce55493253" title="Wykonuje operacje związane z danym elementem XML." alt="" coords="283,5,496,47"/>
+<area shape="rect" id="node4" href="$classXMLInterp4Config.html#a5588af2dc423d361e688cbad0a3da877" title="Wywoływana jest po napotkaniu nowego elementu XML." alt="" coords="5,13,235,39"/>
+</map>
