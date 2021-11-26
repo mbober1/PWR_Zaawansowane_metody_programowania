@@ -82,10 +82,7 @@ void XMLInterp4Config::ProcessCubeAttrs(const xercesc::Attributes  &rAttrs)
  }
 
  char* sName_Name = xercesc::XMLString::transcode(rAttrs.getQName(0));
- char* sName_Shift = xercesc::XMLString::transcode(rAttrs.getQName(1));
  char* sName_Scale = xercesc::XMLString::transcode(rAttrs.getQName(2));
- char* sName_Rot = xercesc::XMLString::transcode(rAttrs.getQName(3));
- char* sName_Trans = xercesc::XMLString::transcode(rAttrs.getQName(4));
  char* sName_RGB = xercesc::XMLString::transcode(rAttrs.getQName(5));
 
  XMLSize_t  Index = 0;
@@ -235,9 +232,7 @@ void XMLInterp4Config::endElement(  const   XMLCh* const    pURI,
                                     const   XMLCh* const    pQName
                                  )
 {
-   char* sURI =  xercesc::XMLString::transcode(pURI);
    char* sElemName = xercesc::XMLString::transcode(pLocalName);
-   char* sQName =  xercesc::XMLString::transcode(pQName);
    xercesc::XMLString::release(&sElemName);
 }
 
